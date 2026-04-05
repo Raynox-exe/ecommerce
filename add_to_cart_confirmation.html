@@ -1,0 +1,239 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NDU Mart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#570008",
+                        "on-secondary-fixed-variant": "#5b5b5f",
+                        "tertiary-fixed-dim": "#eba20d",
+                        "secondary-fixed-dim": "#d5d4d8",
+                        "on-tertiary-fixed": "#352100",
+                        "primary-dim": "#8b3400",
+                        "tertiary-container": "#fbb022",
+                        "secondary": "#5b5b5f",
+                        "on-primary-fixed-variant": "#511b00",
+                        "on-surface": "#2d2f2f",
+                        "tertiary-dim": "#6c4800",
+                        "surface-container-low": "#f0f1f1",
+                        "tertiary": "#7c5300",
+                        "surface-variant": "#dbdddd",
+                        "on-secondary-container": "#515155",
+                        "error": "#b31b25",
+                        "tertiary-fixed": "#fbb022",
+                        "surface": "#f6f6f6",
+                        "on-surface-variant": "#5a5c5c",
+                        "error-dim": "#9f0519",
+                        "surface-container-highest": "#dbdddd",
+                        "on-tertiary-fixed-variant": "#5c3d00",
+                        "surface-bright": "#f6f6f6",
+                        "outline-variant": "#acadad",
+                        "on-error": "#ffefee",
+                        "on-primary-container": "#421400",
+                        "background": "#f6f6f6",
+                        "secondary-dim": "#4f4f53",
+                        "surface-container-high": "#e1e3e3",
+                        "primary": "#9e3c00",
+                        "surface-container": "#e7e8e8",
+                        "on-tertiary-container": "#513500",
+                        "error-container": "#fb5151",
+                        "on-primary-fixed": "#000000",
+                        "on-secondary-fixed": "#3e3f42",
+                        "surface-tint": "#9e3c00",
+                        "primary-container": "#ff7937",
+                        "primary-fixed": "#ff7937",
+                        "secondary-fixed": "#e3e2e6",
+                        "primary-fixed-dim": "#fa6303",
+                        "inverse-primary": "#fa6303",
+                        "on-tertiary": "#fff0e0",
+                        "on-secondary": "#f3f2f6",
+                        "on-primary": "#fff0ea",
+                        "surface-dim": "#d3d5d5",
+                        "inverse-surface": "#0c0f0f",
+                        "outline": "#767777",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e3e2e6",
+                        "on-background": "#2d2f2f",
+                        "inverse-on-surface": "#9c9d9d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Anchor (As per Shared Components) -->
+<header class="fixed top-0 w-full z-50 bg-[#f6f6f6]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 max-w-full">
+<div class="text-xl font-bold tracking-tighter text-[#2d2f2f]">Nexus Retail</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#9e3c00] border-b-2 border-[#9e3c00] pb-1 font-plus-jakarta text-sm tracking-tight transition-colors duration-200" href="#">Shop</a>
+<a class="text-[#2d2f2f] hover:text-[#9e3c00] font-plus-jakarta text-sm tracking-tight transition-colors duration-200" href="#">Curated</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface cursor-pointer active:scale-95 transition-transform" data-icon="shopping_bag">shopping_bag</span>
+<span class="material-symbols-outlined text-on-surface cursor-pointer active:scale-95 transition-transform" data-icon="person">person</span>
+</div>
+</header>
+<!-- Background Content (Simulated Product Page) -->
+<main class="pt-24 px-6 max-w-7xl mx-auto opacity-50 pointer-events-none">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="w-full md:w-1/2 aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Premium wireless noise-canceling headphones in matte black finish on a minimalist concrete pedestal with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH8FFWMukMMvDBWH1Y598C87vw4Z3nUtCMei1D_R-pwzdUsvAwm9sXj2K4sUhrvK6d-226lMwGhAl1DYr2Ge4WEU0TtTg-x96TJhaU76ggvsFVQ3KzjtJRVlydFHMFO9iGx6rg32eg1EbyMnDIkvuNaWU1YosO-2urn7TTnZCgv0hC61iJNSnHzVajoZ_cM8SN-QZ-BN28OFvLeKBfISDfZPYVDd4KjBoAKvPpbItbuvFkYIPW6meSECkg1JjhHZ6d1hBRJf6AUVpc">
+</div>
+<div class="w-full md:w-1/2 py-8">
+<h1 class="text-4xl font-extrabold tracking-tight mb-4">Acoustic Pro Max Wireless</h1>
+<p class="text-2xl font-semibold text-primary mb-6">$349.00</p>
+<div class="h-12 w-full bg-primary/20 rounded-full"></div>
+</div>
+</div>
+</main>
+<!-- SUCCESS OVERLAY CONTAINER -->
+<div class="fixed inset-0 z-[100] flex justify-end">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-on-surface/30 backdrop-blur-sm"></div>
+<!-- Side Drawer -->
+<div class="relative w-full max-w-md h-full bg-surface-container-lowest shadow-[0_-8px_32px_rgba(0,0,0,0.06)] flex flex-col overflow-y-auto">
+<!-- Success Header -->
+<div class="p-6 flex items-center justify-between bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-lg" data-icon="check">check</span>
+</div>
+<span class="font-headline font-bold text-lg tracking-tight">Added to Cart</span>
+</div>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="close">close</span>
+</button>
+</div>
+<!-- Item Details -->
+<div class="p-6">
+<div class="flex gap-4 items-center">
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up of premium black headphones highlighting the leather earcups and sleek metallic frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLshA6Oz1A1FQA-ucA7O902BvddJEnalt0fXN4Oi8n72n0Fo3p_NpwJe_1OaOJaz_jJmHrjTNPvkGaCheuUVwnpGgQWmFtCmDDlH9zPSka6_Kr7dc-TsKrfrgb2W3-fHZxibcwTmMm9SbiCMAggK0E4zxXs8s76boGhW1efAOdYQrrsGU7iZ9stcFxjf9EPp-Zm5i7ang6mtZWnGqs9dgtpjQYbwPU_yk4R_zvF-FLIxGaaukDTAuq8maiXaAbNpZKqWc_9lBIAe5">
+</div>
+<div class="flex-grow">
+<h3 class="font-headline font-bold text-lg leading-tight text-on-surface">Acoustic Pro Max Wireless</h3>
+<p class="text-on-surface-variant text-sm body-md">Space Grey | Large</p>
+<p class="font-semibold text-primary mt-1">$349.00</p>
+</div>
+</div>
+</div>
+<!-- Tonal Transition Separator -->
+<div class="h-2 bg-surface-container-low"></div>
+<!-- Summary & Actions -->
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center px-1">
+<span class="text-on-surface-variant font-medium">Cart Subtotal (3 items)</span>
+<span class="text-xl font-bold text-on-surface">$1,124.00</span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<button class="py-3.5 px-6 rounded-full bg-surface-container-high text-on-surface font-headline font-bold text-sm tracking-tight active:scale-95 transition-all">
+                        View Cart
+                    </button>
+<button class="py-3.5 px-6 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm tracking-tight active:scale-95 transition-all shadow-md">
+                        Checkout
+                    </button>
+</div>
+</div>
+<!-- Cross-Sell Section: Frequently Bought Together -->
+<div class="mt-4 p-6 bg-surface-container-low/30 flex-grow">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="font-headline font-bold tracking-tight text-on-surface">Complete Your Kit</h4>
+</div>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="group flex gap-4 items-center bg-surface-container-lowest p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-16 h-16 rounded-md overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="luxury leather travel case for headphones with velvet interior and golden zipper detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA_4ZUD9SaotvXBbwhSVv7MhQUrgIIDA7QSK2dLL9Hc-BFw2xqcqLV7w68GdfEnpO3iaevDdwbbyv1zdaCrC37RAmUwOSIr2tyFAbZQe6AaasfzBZfzVk-7LZ5Q8scYR9jwwsyAOuwkK1tDs-4PyH2XJVLBDZ-8xwX1L09-t-1Ley040swWr1YYF3ci5bru6fcd9M2jmeXdgYFge4lKoeOUX8CFqhaynHy1eiztR_yOPDWQnZJfky-imxSDbWDEe_3HFblgsSCVr1a">
+</div>
+<div class="flex-grow">
+<h5 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-0.5">Accessory</h5>
+<p class="font-headline font-semibold text-sm leading-snug">Hard-Shell Travel Case</p>
+<p class="text-sm font-bold text-tertiary mt-1">$45.00</p>
+</div>
+<button class="p-2 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="group flex gap-4 items-center bg-surface-container-lowest p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-16 h-16 rounded-md overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="sleek minimalist aluminum headphone stand on a dark wood desk surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CdJp2I1f9beB9ESePk2fnY1WMSTH1F4f2heMVj8Lw3JjRfzfB0sg4cd1XbuQwrF7ne38kmu3oRscPqm7nL0FUtxK-L62TZxeSNl5p_TofRW73zM2ffPn6nZ88WM1z-zmV8I0Pk17KkTTpKHsy156sq2VVE6hXYYPL9GYe0pvP5YZU4Ge_h0yRVW4mxUsb6b0qjKVh43W9MLwg5eo8OkdUzwx_ES4D_sr4Gqi_8PwaKvREHPY-Ukntf_2gsrJ74Kd7m8iAH015mVT">
+</div>
+<div class="flex-grow">
+<h5 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-0.5">Essentials</h5>
+<p class="font-headline font-semibold text-sm leading-snug">Aluminum Desk Stand</p>
+<p class="text-sm font-bold text-tertiary mt-1">$89.00</p>
+</div>
+<button class="p-2 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Loyalty Teaser -->
+<div class="mt-8 p-4 rounded-xl bg-tertiary-container/10 border border-tertiary/10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<div>
+<p class="text-sm font-headline font-bold text-on-tertiary-container">Nexus Rewards</p>
+<p class="text-xs text-on-tertiary-container/80 leading-relaxed">Add these to earn 1,200 additional points toward your next voucher.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacing -->
+<div class="pb-24"></div>
+</div>
+</div>
+<!-- Bottom Navigation Shell (As per Shared Components) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4 bg-white/80 backdrop-blur-2xl z-[110] rounded-t-[32px] shadow-[0_-8px_32px_rgba(0,0,0,0.06)] md:hidden">
+<div class="flex flex-col items-center justify-center text-[#acadad] hover:text-[#9e3c00] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Shop</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#acadad] hover:text-[#9e3c00] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Curated</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#ff7937]/10 text-[#9e3c00] rounded-full px-5 py-2 active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#acadad] hover:text-[#9e3c00] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+
+<script src="core.js"></script>
+
+</body></html>

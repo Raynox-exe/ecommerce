@@ -1,0 +1,233 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+
+<main class="max-w-screen-2xl mx-auto flex">
+<aside class="hidden lg:flex flex-col gap-2 py-8 min-h-screen w-72 bg-white border-r border-gray-100">
+<div class="px-6 mb-6">
+<h2 class="text-lg font-bold text-gray-900">Categories</h2>
+<p class="text-xs text-gray-500">Explore the Collection</p>
+</div>
+<nav class="flex flex-col h-full overflow-y-auto pb-4">
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="shop_by_category.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">verified</span>
+            <span class="text-sm font-medium">Official Store</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-accent/5 text-accent font-bold border-r-4 border-accent" href="home_garden_department.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">kitchen</span>
+            <span class="text-sm">Appliances</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="computing_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">smartphone</span>
+            <span class="text-sm font-medium">Phones & Tablets</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="beauty_health_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">health_and_safety</span>
+            <span class="text-sm font-medium">Health & Beauty</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="home_garden_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">home</span>
+            <span class="text-sm font-medium">Home & Office</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="computing_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">tv</span>
+            <span class="text-sm font-medium">Electronics</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="fashion_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">apparel</span>
+            <span class="text-sm font-medium">Fashion</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">shopping_basket</span>
+            <span class="text-sm font-medium">Supermarket</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="computing_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">laptop_mac</span>
+            <span class="text-sm font-medium">Computing</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="baby_products_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">child_care</span>
+            <span class="text-sm font-medium">Baby Products</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="gaming_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">sports_esports</span>
+            <span class="text-sm font-medium">Gaming</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">more_horiz</span>
+            <span class="text-sm font-medium">Other categories</span>
+        </a></nav>
+</aside>
+<section class="flex-1 px-6 md:px-12 py-8 overflow-x-hidden">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low mb-12">
+<div class="relative z-10 flex flex-col items-start justify-center p-12 md:p-20 md:w-3/5">
+<span class="px-4 py-1 bg-primary text-on-primary text-xs font-bold rounded-full mb-6 tracking-widest uppercase">The Editorial Look</span>
+<h1 class="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-none mb-6">Summer Living</h1>
+<p class="text-lg text-gray-600 mb-8 leading-relaxed">Transform your outdoor space into an oasis with our curated collection of artisanal furniture and organic plants.</p>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all active:scale-95">Explore Essentials</button>
+</div>
+<div class="absolute top-0 right-0 h-full w-full md:w-2/3 pointer-events-none">
+<img alt="Luxurious outdoor patio with modern wooden furniture, lush green tropical plants, and warm afternoon sunlight" class="w-full h-full object-cover opacity-80 md:opacity-100 transform translate-x-12" data-alt="Luxurious outdoor patio with modern wooden furniture, lush green tropical plants, and warm afternoon sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA99bD-sUUyrpeugumQRinb1ClALfBz_iwgFWOmH1GnIk0xiT1-IFbpkD0IhNW5d6jMIsWQn7dG57zuk1jfblq8SLGENwrxQnLwluWnEYoXzqoek7XXcuDEa5p4W55uhjg1FCVzg1RU8jFsU1awx9awfmrQCsDym6Ap0ImWCRFsa9yDUeUe9g2KD09jQW0jNcwIglPrF-qgtXwsygtoBrBaE0Cs1B-i5jxiaetGdZYFTn5GwOMuzyZqsmhmKTmX9gj7w_i6H8KPjTQA">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/40 to-transparent"></div>
+</div>
+</div>
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-3xl font-bold tracking-tight">Home &amp; Garden Essentials</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</div>
+</div>
+<div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <!-- Dynamic products will be injected here -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.loadProductsByCategory) {
+            window.loadProductsByCategory('products-grid', ['Home & Garden', 'Appliances']);
+        }
+    });
+</script>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="bg-surface-container-highest text-on-surface-variant px-10 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-md">Load More Essentials</button>
+</div>
+</section>
+</main>
+<footer class="w-full relative bottom-0 bg-[#f0f1f1] dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-black text-zinc-800 dark:text-white">CuratedRetail</div>
+<p class="text-xs text-zinc-500 font-inter">Elevating your daily living through intentional design and artisanal quality. We source only the finest essentials for your modern home.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-bold text-on-surface uppercase tracking-wider mb-2">Company</h4>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] text-xs font-inter transition-opacity hover:opacity-80" href="#">About Us</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] text-xs font-inter transition-opacity hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] text-xs font-inter transition-opacity hover:opacity-80" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-bold text-on-surface uppercase tracking-wider mb-2">Customer Care</h4>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] text-xs font-inter transition-opacity hover:opacity-80" href="#">Contact</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] text-xs font-inter transition-opacity hover:opacity-80" href="#">Shipping Policy</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] text-xs font-inter transition-opacity hover:opacity-80" href="#">Returns</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-sm font-bold text-on-surface uppercase tracking-wider mb-2">Join the Club</h4>
+<p class="text-xs text-zinc-500 mb-2">Get 10% off your first order when you sign up for our newsletter.</p>
+<div class="flex gap-2">
+<input class="bg-surface-container-highest border-none rounded-lg px-4 py-2 text-xs w-full" placeholder="email@example.com" type="email">
+<button class="bg-primary text-white p-2 rounded-lg"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="border-t border-zinc-200 dark:border-zinc-800 px-12 py-8 flex justify-between items-center max-w-screen-2xl mx-auto">
+<p class="font-inter text-xs text-zinc-500">© 2024 Curated Retail Experience. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-400 text-lg">payments</span>
+<span class="material-symbols-outlined text-zinc-400 text-lg">credit_card</span>
+<span class="material-symbols-outlined text-zinc-400 text-lg">local_shipping</span>
+</div>
+</div>
+</footer>
+
+<script src="core.js"></script>
+
+</body></html>

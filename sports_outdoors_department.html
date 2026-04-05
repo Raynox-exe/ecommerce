@@ -1,0 +1,428 @@
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 v-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-semibold text-accent border border-accent rounded-lg hover:bg-accent hover:text-white transition-all duration-300">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+<!-- Top Navigation Bar -->
+
+<main class="flex max-w-screen-2xl mx-auto min-h-screen">
+<!-- Sidebar Navigation (Jumia-style) -->
+<aside class="hidden lg:flex flex-col gap-2 py-8 min-h-screen w-72 bg-white border-r border-gray-100">
+<div class="px-6 mb-6">
+<h2 class="text-lg font-bold text-gray-900">Categories</h2>
+<p class="text-xs text-gray-500">Explore the Collection</p>
+</div>
+<nav class="flex flex-col h-full overflow-y-auto pb-4">
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="shop_by_category.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">verified</span>
+            <span class="text-sm font-medium">Official Store</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="home_garden_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">kitchen</span>
+            <span class="text-sm font-medium">Appliances</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="computing_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">smartphone</span>
+            <span class="text-sm font-medium">Phones & Tablets</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="beauty_health_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">health_and_safety</span>
+            <span class="text-sm font-medium">Health & Beauty</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="home_garden_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">home</span>
+            <span class="text-sm font-medium">Home & Office</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="computing_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">tv</span>
+            <span class="text-sm font-medium">Electronics</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="fashion_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">apparel</span>
+            <span class="text-sm font-medium">Fashion</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">shopping_basket</span>
+            <span class="text-sm font-medium">Supermarket</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="computing_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">laptop_mac</span>
+            <span class="text-sm font-medium">Computing</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="baby_products_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">child_care</span>
+            <span class="text-sm font-medium">Baby Products</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-accent/5 text-accent font-bold border-r-4 border-accent" href="gaming_department.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+            <span class="text-sm">Gaming</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">more_horiz</span>
+            <span class="text-sm font-medium">Other categories</span>
+        </a></nav>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-1 px-6 md:px-12 py-8 bg-surface">
+<!-- Page Header / Hero -->
+<div class="relative overflow-hidden rounded-3xl mb-12 bg-surface-container-low min-h-[320px] flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="dynamic low-angle shot of a determined athlete running on an urban track during golden hour with dramatic long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_STfX1URVEXqs4aCeaLAjPym9odb-74VlABStcHLJSAlb0Epl_--s2ekqBkcDqmummwtk6Jx5Ag803WMHokKualJSHYbX0JN90umJxg-DoSc0snGlfJHmvxVImw-Nf--XwzTnrSYgWlkoSZm6woi4rFqnyU8Dvd9_SGfLWcwql0Aw7LAqhzFZAQlmKUN3C5po9gxtKoqlGMUBWguBJUN8lppMMBhs-RbmXVcM6f4R9uZvnv9n2CxBB1JmefQ0dGfzSKvPgjJz1BEv">
+<div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-16 py-12 max-w-2xl">
+<span class="inline-block bg-primary text-on-primary text-[10px] font-bold tracking-[0.2em] px-3 py-1 rounded mb-4 uppercase">New Season Arrival</span>
+<h1 class="text-4xl md:text-6xl font-extrabold text-on-surface leading-tight mb-6 tracking-tighter">Peak Performance: <span class="text-primary">Sports &amp; Outdoors</span></h1>
+<p class="text-zinc-600 text-lg mb-8 leading-relaxed max-w-md font-body">Engineered for the elite. Discover the curated collection of technical apparel and high-performance equipment designed to break limits.</p>
+<div class="flex gap-4">
+<button class="editorial-gradient text-white px-8 py-4 rounded-full font-bold shadow-xl active:scale-95 transition-all text-sm">Shop All Gear</button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-full font-bold active:scale-95 transition-all text-sm">View Catalog</button>
+</div>
+</div>
+</div>
+<!-- Category Chips -->
+<div class="flex flex-wrap gap-3 mb-12">
+<button class="px-5 py-2 rounded bg-primary-container text-on-primary-container font-semibold text-sm">All Sport</button>
+<button class="px-5 py-2 rounded bg-surface-container-highest text-on-surface font-medium text-sm hover:bg-zinc-200 transition-colors">Running</button>
+<button class="px-5 py-2 rounded bg-surface-container-highest text-on-surface font-medium text-sm hover:bg-zinc-200 transition-colors">Gym &amp; Training</button>
+<button class="px-5 py-2 rounded bg-surface-container-highest text-on-surface font-medium text-sm hover:bg-zinc-200 transition-colors">Camping &amp; Hiking</button>
+<button class="px-5 py-2 rounded bg-surface-container-highest text-on-surface font-medium text-sm hover:bg-zinc-200 transition-colors">Yoga</button>
+<button class="px-5 py-2 rounded bg-surface-container-highest text-on-surface font-medium text-sm hover:bg-zinc-200 transition-colors">Recovery</button>
+</div>
+<!-- Product Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Item 1: High Tech Sneaker -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded">LOW STOCK</span>
+</div>
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="side view of a sleek bright red performance running shoe on a minimalist white pedestal with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2LIzMX1nK4WSFOXB4yz-sPvkWrp8eOEWFtFAKFtAGpT3UeWT-WGYirBYzclKNgiclrY2WbG42lipfyYqNyaoNnst513wX4EDhnkn1k_zSk4ukSl8RQWIAPNDcJVDLZuQOljX3zW4dzvDZJ5dwvM9wa-LE_Cq7Ow-0Bk2y7XKGwf7JnZxVB_GP1xj9itgrt8SsBpa6WPh3lEtqcW4uBvAqY3e2d2RPst-_ZSo44ohsdF2nT3f515CCPJjnJPOKEQxhSA1j5DbTubIY">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">AeroSwift</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Elite Velocity Runner X1</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$189.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Smart Watch -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="top-down lifestyle shot of a modern black titanium smart watch with a silicone strap on a clean light grey surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjFq3dzADqUy8vxjZdexbnuXnWhlYU0EuUsBPdqRwmMjwD3gkBCYvtXBf6Weplio8WcZN4Je9ar2y7S4NX6FuYvM8Zgy1sQI1s4amIDLGawIgtVioyDl12Ui6ZBranM2nGJdmqOQu9IZGMVmpM-IhkbAKsqh21kmgO3hGPykq8sZvYJLgK-WZCc475Vjixk3_8MHQW0UaKReXHD44xbz_X_40FYfnJrWLDyQq-WvUedf8agMPZmtxKUeUR2j_33YaMRFdD34LEFU4o">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">PeakTech</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Summit Pro Multisport Watch</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$349.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Tent -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="high-quality ultralight camping tent pitched on a forest floor at dusk with warm lantern light glowing from inside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWk3j2dv1Sr5UYKXeIcEUqF9ooRY-lVWMJQ6fyhgWND67qH7sIFBbaWk154DHnllcOfB4BBkvP9JUMUtXFsZh8gHrJkt3sEfzbViLYodgPYkf97FpzDwUZeZucRqejdBqau2YPWgy9JYnSkyvF91CcFxEcZzIwt_RNIdNNLcwAUSWG8h-N4waWogcnN0WeUqLMQmcxL84qcIwT48TstcGVGiKEoytCCEbkLdXXa93iNnn8px4Okiq0dqGoNf6qeGgVO-k_mYZfJ57J">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">Alpine Expedition</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">TerraNova 2-Person Ultralight</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$225.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4: Dumbbells -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="pair of sleek matte black adjustable dumbbells on a dark textured gym floor with high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtGRn6NEIJYJWEqrXnmfojNwxaESWbwqENE-urnW73XySKyTs3UNUG4ACqWfk90fJm7LRlciupJKT1KI1vhTN7isqItXHgX1OEDrlj5pTuaGLKgHzrr_oBKKZKvimSNub8DJ0XbHGyWLJiWjpQWGREkhzCFrRSEjgIYvcsMHpJGZUr5AyOVUuUeX3B-TJACbulg-4yH1b92Zu-COU8vfDUqs8pzQdMCzi5LB9iw8gP88Nlhv9EKeda56RJVlPEMuIIDAIhhUncsiWK">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">IronCore</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Pro-Select Adjustable Dumbbell Set</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$415.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5: Yoga Mat -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="rolled up premium eco-friendly natural rubber yoga mat in a soft sage green color on a sunlit wooden floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaG_61sucQ9bHR4FLj1OQFicnMNulOY4_S6SESuMJJhZfht4tt07RrdTeT7R2GH6esxEF26YajPVHPcLpD8VT6vh8uGDJeJYwY1-sJcpouarLiIIQVbaNDyuBjrxACzZFH0llcZSwwtLMJIH5Q7eSSlPdgCLQhD3qAKXg4fDfjkyjzYW-kJbwQoyNvFywBS9EqKRjYmrswi9xrWFxj82szIlqwY6zEBPv7L6GdcZ2WMF0MKAsBwG550Z0PbbCSk5QFfrHNAQUM1ABS">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">ZenFlow</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Elite Grip 5mm Yoga Mat</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$75.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 6: Mountain Bike -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative lg:col-span-2">
+<div class="w-full aspect-[2/1] bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="professional carbon fiber mountain bike standing on a dusty trail with epic mountain peaks in the background at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPHIq5HQRXphLUBl371OzDDJV2ATxgNwdBo0yg-1uKCznp6UnEZxdZqZ1mhWpsX-3mFMn9J6G-zO3Pr5oRCZ0AZGX3sUGL0g9VBNPA-cFWEwzPVPGhqkObQX8IH8UQ3PX9HUI2ypz4t7aKhc2omjt3QMd-Uy5W0V-te-6SPfvVTnJEkEmC0tM0B4OblgLReza-BCW5hZTgwJSZvlk9RhYuv5wwShYsPGVCN-7OqXKFoXWR8sPp2szvf_gv_xXo9F5E2KfCjve_Gd7L">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">TrailBlaze</p>
+<h3 class="text-xl font-bold text-on-surface mb-2 leading-snug">Summit Pro Full Suspension Carbon MTB</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-2xl font-extrabold text-primary">$3,450.00</span>
+<button class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded-full font-bold flex items-center gap-2 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_cart">shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 7: Compression T-Shirt -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="clean product shot of a high-performance grey moisture-wicking athletic compression shirt displayed on a torso mannequin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqLQsk5ujmtWBw9_U5lEGPBZPvmQM9Gcqhu5ncT7SlPXySullaMX3zTpEw6LlXvt6LfwBT8wOwUk_zpbxuS0q8fKIPavD7gaBJJjQSdWbkRxq2S2ZCEAuWjXDPP-fEUbcO3KDrZcVKfOZNgtdXycl_5lwXNwfYE2IYEMAb4Ku-QB_vt4YFplnypdVEYpv3b1brI0ahM6Qk-kkfiSF4CV9peNoRHIVzY4WG9-S6KFooSkOhhjE49QEnGVyrTqThZO62LJr3OFR5iNEB">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">AeroDry</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Core Compression Training Tee</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$45.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 8: Backpack -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="rugged olive green tactical hiking backpack with many straps and compartments against a weathered wooden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbrXdpT3BE8KQz6mrbCwEEeo1bPce1uUQZzZc70SqIgQ7CjQgmxKOOexRYhLNCWm6KoeSvEuOAMmzbRSwv63_kvWKVBDZ0k936qnD2uGwU7_YBHAWyUdI-GO_q_TmBCCMuQuKzy9YbmLFhiG8HZW9wOG4Ho-H3qgwmGTMH-dUOSvsHr4IzBsvj-Ke7CM9Pv1oxelQGlBoqQo-GCOii2JLA7fRRjd5xtIHlaK2UPrKf0_MUA0K-3TJuXqXvFazUzIVXfbgy08VHyT_">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">Pathfinder</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Ranger 45L Expedition Pack</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$165.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 9: Water Bottle -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="stainless steel vacuum insulated water bottle in matte white with minimalist branding on a clean surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXQ5eS4pjysvkqHTQSLBrw1NiRw0AVsimN1iixqj7vBC6-sHHNebj1qNVFlUo3SKQaGdjGwNkRZ4HhGjarW5EMBjEjd-czoJY98bBXW5S3pDWIFlyaGhKs2jAwiMBLI3dNRo9wItoK6EJabUpEWVEemXmZ7iAfj_obYwGbGgbsKqzZiTVac79Z8M-P32LlZk_4LCFVawzt_RyENQmCrv2GqlQk-UYVz67dxFanJMuBYyGWTP2WoqX1tVkPA22QHBPtY9f9EHwqLle7">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">HydraLux</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Insulated 1L Pro Flask</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$38.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 10: Headlamp -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern LED headlamp with adjustable elastic strap displayed on a dark grey background with light emphasizing the lens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW_JVoIYt3xT2dNrXsLQxZNUFQw67XJziiV5MCJvLjj36BZq0JjO133ztcE-mCD2Ua5y7rGuky6wuQa7qqYjTkVtiSwln0I46_0a_x9QNaFCaMW9yJu2BpymCht4roeDte8M3NVIi1xD5d0Er0cGfjYt7ddV0YBQg0cJ7PW6_B4rA2ZZ9vpUug8vqq9Y7PK69DDWFs7aF7y4vPVuwjzEo9AXZeJYSlB-y2XaHrekfYy649v-ztQ-LQ9DetKbppwr4ltljWc2W0KNnP">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">NightOptic</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">LumenMaster 500 Rechargeable</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$55.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 11: Shorts -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="pair of dark navy technical running shorts with side pockets and reflective details on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSGoSu7J0C52cClgRXvuIjrweOk6m3na6Xk9i6fijG5dVZNVytXjfCMPYL1SndTg57rULGQBU3Am7uMYIoQNDz65VDjym7OkRfY-LcuZdrlXJ13MXoqRgaSTGbYsfmfKdFhb7CPukKdk1hAsRVEJMp1CdvxOBV2wXkfmv9Vt5fgl7Ao0j9b1sVrKio5PUeNuqrpohVuMlYLKZqoIMyBlnOtQLKBpiRwUKuQjWfs177M72nX4TCBDDCZnetgieI81kzI4mZ3MmrCGdu">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">FlowState</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Aero 7" Technical Running Shorts</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$62.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 12: Foam Roller -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all hover:shadow-[0_8px_32px_rgba(45,47,47,0.06)] flex flex-col h-full relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant blue high-density foam roller with deep tissue grid texture on a grey studio floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYAXObKtOdYFl6hdKRdrNhRBo4y5vr-OrsotOymR4svSdxaG7vavkwoT5FjASTe52TuVZpaywdQ1MQvZm4yI8zB8rUqGkKCaDW0W5QnaNJDNRC0LNlP62QqGyd3BI2-qEbqOghiAy98JxWBHxig5GsJcuS0IlseoTO30JRuc9-JqtY5wJSyvpQpP43ujjdB1PL4cg_rkLjbiO4HD16_af5nek5362Iy1AGrLq1LNua-dxnj2PGFfX1haPcS7eX1b5GCqLMdCYepRcp">
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-zinc-500 text-xs font-medium mb-1 uppercase tracking-wider">Recovr</p>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-snug">Trigger Point Grid Foam Roller</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-extrabold text-on-surface">$40.00</span>
+<button class="w-10 h-10 rounded-full editorial-gradient text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="w-full bg-[#f0f1f1] dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto font-inter text-xs text-zinc-500">
+<div class="flex flex-col gap-6">
+<div class="text-xl font-black text-zinc-800 dark:text-white">CuratedRetail</div>
+<p class="leading-relaxed">The ultimate destination for premium lifestyle products, curated for those who demand excellence in every aspect of life.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary transition-colors cursor-pointer" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary transition-colors cursor-pointer" data-icon="instagram">retweet</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary transition-colors cursor-pointer" data-icon="twitter">retweet</span>
+</div>
+</div>
+<div>
+<h4 class="text-zinc-800 dark:text-white font-bold mb-6 uppercase tracking-widest text-[10px]">Customer Care</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">Contact</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">Shipping Policy</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">Returns</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-zinc-800 dark:text-white font-bold mb-6 uppercase tracking-widest text-[10px]">Information</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">About Us</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00] transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-zinc-800 dark:text-white font-bold mb-6 uppercase tracking-widest text-[10px]">Join Our Newsletter</h4>
+<p class="mb-4">Stay ahead with the latest product drops and exclusive offers.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-highest border-none rounded-lg px-4 text-xs focus:ring-1 focus:ring-primary/40" placeholder="Enter your email" type="email">
+<button class="bg-zinc-800 text-white px-4 py-2 rounded-lg font-bold hover:bg-zinc-700 transition-colors">JOIN</button>
+</div>
+</div>
+</div>
+<div class="border-t border-zinc-200/50 dark:border-zinc-800/50 py-8 px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px]">
+<p>© 2024 Curated Retail Experience. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-400" data-icon="credit_card">credit_card</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="payments">payments</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="account_balance">account_balance</span>
+</div>
+</div>
+</footer>
+
+<script src="core.js"></script>
+
+</body></html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NDU Mart Admin</title>
+<!-- BEGIN: External Resources -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- END: External Resources -->
+<style data-purpose="custom-styling">
+    .sidebar-active {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid #ffffff;
+      color: white !important;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+    .spa-section {
+        display: none;
+    }
+    .spa-section.active {
+        display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900 h-screen overflow-hidden">
+<div class="flex h-full">
+<!-- BEGIN: Left Sidebar -->
+<aside class="w-64 bg-slate-900 text-white flex flex-col flex-shrink-0">
+<div class="p-6">
+<h1 class="text-2xl font-bold tracking-wider uppercase text-blue-400">NDU Mart</h1>
+<p class="text-xs text-slate-400 mt-1">Admin Control Center</p>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4 custom-scrollbar overflow-y-auto" data-purpose="main-navigation">
+<a class="sidebar-link sidebar-active flex items-center px-4 py-3 rounded text-slate-300 transition-colors hover:bg-slate-800" href="#" data-target="overview">
+<svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v12a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  Overview
+</a>
+<a class="sidebar-link flex items-center px-4 py-3 rounded text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" href="#" data-target="orders">
+<svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  Orders
+</a>
+<a class="sidebar-link flex items-center px-4 py-3 rounded text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" href="#" data-target="products">
+<svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  Products
+</a>
+<a class="sidebar-link flex items-center px-4 py-3 rounded text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" href="#" data-target="customers">
+<svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  Customers
+</a>
+<a class="sidebar-link flex items-center px-4 py-3 rounded text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" href="#" data-target="analytics">
+<svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  Analytics
+</a>
+<div class="pt-4 pb-2 text-xs font-semibold text-slate-500 uppercase tracking-widest px-4">System</div>
+<a class="sidebar-link flex items-center px-4 py-3 rounded text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" href="#" data-target="settings">
+<svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  Settings
+</a>
+</nav>
+<div class="p-4 bg-slate-950 border-t border-slate-800">
+<div id="admin-profile" class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">A</div>
+<div class="ml-3 overflow-hidden">
+<p id="admin-name" class="text-sm font-medium truncate">Admin</p>
+<p class="text-xs text-slate-400 truncate">Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: Left Sidebar -->
+
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto custom-scrollbar flex flex-col">
+<!-- BEGIN: Top Header -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-10 flex items-center justify-between px-8 py-4 flex-shrink-0">
+<div class="flex items-center flex-1">
+<div id="page-title" class="text-xl font-bold text-slate-800 capitalize">Dashboard Overview</div>
+</div>
+<div class="flex items-center space-x-6">
+<div id="current-date" class="text-sm font-medium text-gray-700">July 10, 2024</div>
+<button onclick="window.location.href='index.html'" class="text-sm text-blue-600 hover:text-blue-800 font-bold">Exit Admin</button>
+</div>
+</header>
+<!-- END: Top Header -->
+
+<!-- SPAs Sections -->
+<div class="flex-1 relative bg-gray-50">
+    <!-- OVERVIEW SECTION -->
+    <section id="view-overview" class="spa-section active p-8 space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-sm font-medium text-gray-500">Total Sales</span>
+            <div class="mt-4"><span id="stat-sales" class="text-3xl font-bold text-blue-600">$0.00</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-sm font-medium text-gray-500">Total Orders</span>
+            <div class="mt-4"><span id="stat-orders" class="text-3xl font-bold text-purple-600">0</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-sm font-medium text-gray-500">Total Customers</span>
+            <div class="mt-4"><span id="stat-customers" class="text-3xl font-bold text-green-600">0</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-sm font-medium text-gray-500">Active Products</span>
+            <div class="mt-4"><span id="stat-products" class="text-3xl font-bold text-orange-600">0</span></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold mb-6">Order Activity</h3>
+            <div class="h-64"><canvas id="salesChart"></canvas></div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col">
+                <h3 class="text-lg font-bold mb-6">System Status</h3>
+                <div class="space-y-6 flex-1">
+                <div class="flex items-center justify-between">
+                    <p class="text-sm font-semibold">Database Connection</p>
+                    <div class="text-sm font-bold text-green-500">Active</div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                    <p class="text-sm font-semibold">Payment Gateway</p>
+                    <span class="text-xs font-medium text-green-500">Healthy</span>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="p-6 border-b border-gray-50"><h3 class="text-lg font-bold">Recent Orders</h3></div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm whitespace-nowrap">
+                        <thead class="bg-gray-50 text-gray-500 uppercase text-xs">
+                        <tr><th class="px-6 py-4">Order ID</th><th class="px-6 py-4">Customer</th><th class="px-6 py-4">Total</th></tr>
+                        </thead>
+                        <tbody id="recent-orders-body" class="divide-y divide-gray-50"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold mb-6">Inventory (Low Stock)</h3>
+                <div id="low-stock-list" class="space-y-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMERS SECTION -->
+    <section id="view-customers" class="spa-section p-8">
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-xl font-bold text-gray-800">User directory</h3>
+                <span id="customers-count" class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full border border-blue-400">Total: 0</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm whitespace-nowrap">
+                    <thead class="bg-gray-100 text-gray-600 uppercase text-xs tracking-wider">
+                    <tr>
+                        <th class="px-6 py-4 font-bold">Name</th>
+                        <th class="px-6 py-4 font-bold">Email</th>
+                        <th class="px-6 py-4 font-bold">Role</th>
+                        <th class="px-6 py-4 font-bold">Hashed Password</th>
+                    </tr>
+                    </thead>
+                    <tbody id="all-customers-body" class="divide-y divide-gray-100 bg-white">
+                        <tr><td colspan="4" class="px-6 py-10 text-center text-gray-500">Loading customers...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORDERS SECTION -->
+    <section id="view-orders" class="spa-section p-8">
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-xl font-bold text-gray-800">Store Orders</h3>
+                <span id="orders-count" class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full border border-purple-400">Total: 0</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm whitespace-nowrap">
+                    <thead class="bg-gray-100 text-gray-600 uppercase text-xs tracking-wider">
+                    <tr>
+                        <th class="px-6 py-4 font-bold">Order ID</th>
+                        <th class="px-6 py-4 font-bold">Date</th>
+                        <th class="px-6 py-4 font-bold">Customer Name</th>
+                        <th class="px-6 py-4 font-bold">Customer Email</th>
+                        <th class="px-6 py-4 font-bold">Items Count</th>
+                        <th class="px-6 py-4 font-bold">Total Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody id="all-orders-body" class="divide-y divide-gray-100 bg-white">
+                        <tr><td colspan="6" class="px-6 py-10 text-center text-gray-500">Loading orders...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-products" class="spa-section p-8 h-full flex items-center justify-center">
+        <div class="text-center text-gray-400">
+            <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            <h2 class="text-xl font-bold mb-2">Products Management</h2>
+            <p>Component is under construction. Please use Overview for stock alerts.</p>
+        </div>
+    </section>
+    
+    <section id="view-analytics" class="spa-section p-8 h-full flex items-center justify-center">
+        <div class="text-center text-gray-400">
+            <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            <h2 class="text-xl font-bold mb-2">Deep Analytics</h2>
+            <p>Component under construction.</p>
+        </div>
+    </section>
+
+    <section id="view-settings" class="spa-section p-8 h-full flex items-center justify-center">
+        <div class="text-center text-gray-400">
+            <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
+            <h2 class="text-xl font-bold mb-2">System Config</h2>
+            <p>Configure NDU Mart instance settings here.</p>
+        </div>
+    </section>
+
+</div>
+</main>
+</div>
+
+<script>
+    let globalChart = null;
+    let dataLoaded = { customers: false, orders: false };
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userStr = localStorage.getItem('user');
+        if (!userStr) {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        const user = JSON.parse(userStr);
+        if (user.role !== 'admin') {
+            alert('Access denied. Admin only.');
+            window.location.href = 'index.html';
+            return;
+        }
+
+        document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        document.getElementById('admin-name').innerText = user.username;
+        const profileInitial = document.querySelector('#admin-profile div');
+        if(profileInitial) profileInitial.innerText = user.username[0].toUpperCase();
+
+        // Router Setup
+        const links = document.querySelectorAll('.sidebar-link');
+        const sections = document.querySelectorAll('.spa-section');
+        const pageTitle = document.getElementById('page-title');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                
+                // Update active classes
+                links.forEach(l => l.classList.remove('sidebar-active', 'text-white'));
+                link.classList.add('sidebar-active', 'text-white');
+                
+                // Switch sections
+                sections.forEach(sec => sec.classList.remove('active'));
+                document.getElementById('view-' + target).classList.add('active');
+                
+                // Set Header
+                pageTitle.innerText = target === 'overview' ? 'Dashboard Overview' : target;
+
+                // Fire initial loads
+                if(target === 'customers' && !dataLoaded.customers) loadCustomers();
+                if(target === 'orders' && !dataLoaded.orders) loadAllOrders();
+            });
+        });
+
+        // Initial Load of Overview
+        await runOverviewLoad();
+    });
+
+    async function runOverviewLoad() {
+        try {
+            const resp = await window.authFetch('/orders/admin/stats');
+            if (resp.status === 403) {
+                alert('Session expired or admin access revoked.');
+                window.location.href = 'login.html';
+                return;
+            }
+            const data = await resp.json();
+
+            // Populate Stats Cards
+            document.getElementById('stat-sales').innerText = `$${parseFloat(data.totalSales).toFixed(2)}`;
+            document.getElementById('stat-orders').innerText = data.totalOrders;
+            document.getElementById('stat-customers').innerText = data.totalCustomers;
+            document.getElementById('stat-products').innerText = data.totalProducts;
+
+            // Recent Orders
+            const ordersBody = document.getElementById('recent-orders-body');
+            if (data.recentOrders && data.recentOrders.length > 0) {
+                ordersBody.innerHTML = data.recentOrders.map(o => `
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4 font-medium">#ORD-${o.id}</td>
+                        <td class="px-6 py-4">${o.User ? o.User.username : 'Unknown'}</td>
+                        <td class="px-6 py-4 text-green-700 font-semibold">$${parseFloat(o.totalAmount).toFixed(2)}</td>
+                    </tr>
+                `).join('');
+            } else {
+                ordersBody.innerHTML = `<tr><td colspan="3" class="px-6 py-10 text-center text-gray-400">No orders yet</td></tr>`;
+            }
+
+            // Low Stock
+            const lowStockList = document.getElementById('low-stock-list');
+            if (data.lowStockProducts && data.lowStockProducts.length > 0) {
+                lowStockList.innerHTML = data.lowStockProducts.map(p => `
+                    <div class="flex items-center p-3 bg-red-50 border border-red-100 rounded-lg">
+                        <div class="w-10 h-10 bg-white rounded flex-shrink-0 flex items-center justify-center overflow-hidden shadow-sm">
+                            <img src="${p.imageUrl || 'https://via.placeholder.com/100'}" class="object-cover h-full w-full">
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="text-sm font-semibold text-gray-900">${p.name}</p>
+                            <p class="text-xs font-bold text-red-600">Only ${p.stock} left in stock!</p>
+                        </div>
+                        <a href="edit_product.html?id=${p.id}" class="px-3 py-1.5 bg-white text-xs font-bold border border-red-200 rounded text-red-700 shadow-sm hover:bg-red-50 transition-colors">Fix</a>
+                    </div>
+                `).join('');
+            } else {
+                lowStockList.innerHTML = `<p class="text-gray-400 py-10 text-center">All inventory levels look healthy.</p>`;
+            }
+
+            // Chart Initialization
+            const ctx = document.getElementById('salesChart');
+            if(ctx) {
+                if(globalChart) globalChart.destroy();
+                globalChart = new Chart(ctx.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        datasets: [{
+                            label: 'Recent Sales History',
+                            data: [6, 12, 10, 18, data.totalOrders, data.totalOrders + 2, data.totalOrders + 1],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                });
+            }
+        } catch (err) {
+            console.error('Failed overview load:', err);
+        }
+    }
+
+    async function loadCustomers() {
+        dataLoaded.customers = true;
+        const tbody = document.getElementById('all-customers-body');
+        try {
+            const resp = await window.authFetch('/users');
+            const users = await resp.json();
+            
+            document.getElementById('customers-count').innerText = "Total: " + users.length;
+            
+            if(users.length > 0) {
+                tbody.innerHTML = users.map(u => `
+                    <tr class="hover:bg-blue-50/50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded bg-gradient-to-tr from-blue-500 to-indigo-600 text-white flex items-center justify-center font-bold text-xs mr-3 shadow-sm">${u.username[0].toUpperCase()}</div>
+                                <span class="font-medium text-gray-900">${u.username}</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500">${u.email}</td>
+                        <td class="px-6 py-4">
+                            <span class="${u.role === 'admin' ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-green-100 text-green-700 border-green-200'} text-xs font-semibold px-2 py-0.5 rounded border">
+                                ${u.role.toUpperCase()}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 font-mono text-xs text-gray-400 break-all max-w-xs truncate" title="${u.password}">${u.password}</td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-10 text-center text-gray-400">No users found.</td></tr>`;
+            }
+        } catch(err) {
+            tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-10 text-center text-red-500">Error loading customers: ${err.message}</td></tr>`;
+        }
+    }
+
+    async function loadAllOrders() {
+        dataLoaded.orders = true;
+        const tbody = document.getElementById('all-orders-body');
+        try {
+            const resp = await window.authFetch('/orders/admin/all');
+            const orders = await resp.json();
+            
+            document.getElementById('orders-count').innerText = "Total: " + orders.length;
+
+            if(orders.length > 0) {
+                tbody.innerHTML = orders.map(o => `
+                    <tr class="hover:bg-purple-50/50 transition-colors">
+                        <td class="px-6 py-4 font-mono font-medium text-gray-700">#ORD-${o.id}</td>
+                        <td class="px-6 py-4 text-gray-500">${new Date(o.createdAt).toLocaleDateString()}</td>
+                        <td class="px-6 py-4 font-medium text-slate-800">${o.User ? o.User.username : 'Guest'}</td>
+                        <td class="px-6 py-4 text-gray-600">${o.User ? o.User.email : '-'}</td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-600 text-xs font-bold">${o.OrderItems ? o.OrderItems.length : 0}</span>
+                        </td>
+                        <td class="px-6 py-4 font-bold text-green-700">$${parseFloat(o.totalAmount).toFixed(2)}</td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-gray-400">No orders currently available.</td></tr>`;
+            }
+
+        } catch(err) {
+            tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-red-500">Error loading orders: ${err.message}</td></tr>`;
+        }
+    }
+</script>
+
+<script src="core.js"></script>
+</body></html>

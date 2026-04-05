@@ -1,0 +1,267 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #F96302, #ff7937);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #F96302 0%, #ff7937 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary min-h-screen flex flex-col">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+<!-- TopAppBar -->
+
+<main class="mt-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full flex-grow pb-24">
+<!-- Hero Section / Editorial Header -->
+<section class="mb-16 mt-8 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
+                    Curated <span class="text-gradient">Collections</span>
+</h1>
+                <p class="text-lg text-gray-500 leading-relaxed font-body">
+                    Experience e-commerce through a different lens. We've hand-selected our premier inventory across five core pillars, ensuring every item meets the Nexus standard of excellence and aesthetic integrity.
+                </p>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="text-3xl font-headline font-bold text-primary">2.4k+</span>
+<span class="text-xs uppercase tracking-widest text-gray-400">Items</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="text-3xl font-headline font-bold text-primary">12</span>
+<span class="text-xs uppercase tracking-widest text-gray-400">Curation hubs</span>
+</div>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Electronics: Featured Large -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Electronics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern workspace with high-end tech gear, a sleek laptop, minimalist headphones, and ambient soft lighting in a professional studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1TwOVNwX994DrNOHWUqOaPcQ9CjvFNlwgckTjpRfu68t8URmTo3uq9FT2oC0UArNEksofc4IFG1gH66F5GYSRWZYqTsJ1756dH-sbmLIrVPQgC141ddrWeXVd5v00cLsEZayn3RW5-UI61urtTvq1Xrdjn6-13dGMNN2MTG-qbKAbC6BjYIlR_b4582RFUEQlfsw8QG5EhoZ_Xq96XQSbe7cPhK0X2y6noeetdiXnjhND1AVcSzRaFZdtAMzDVCMGOOiGbEREms5N">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<span class="text-primary-container font-headline font-bold text-sm tracking-widest uppercase mb-2">Innovation Hub</span>
+<h2 class="text-4xl font-headline font-extrabold text-white mb-3">Electronics</h2>
+<p class="text-neutral-300 max-w-md mb-6 font-body">Next-generation hardware for the modern visionary. Discover cutting-edge devices designed for peak performance.</p>
+<div>
+<button class="bg-gradient-primary text-white px-8 py-3 rounded-full font-bold text-sm inline-flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+                            Shop Electronics
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fashion: Vertical Focus -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="h-full overflow-hidden min-h-[500px]">
+<img alt="Fashion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial fashion shot of high-end garments hanging on a minimalist rack, soft directional lighting, neutral color palette with high-quality textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3NofjJUA-yegQ5R5egKBNh-apq5OPzixTne8Po0DeVINvNwPvkc4CZPONjHgt98VP3qkBuyIAQ_mhlp8pqP8tgwlsc0bjW9r-AYY2j_iJsROCVODd7WOtyfxcBOJpoRuIsl4Vly4UUogxqLiwL8nQjUJLHFLeZ83VoK3XaV7YBh8MnCIWEqp8jxKl_umZKvEljy3qgAFfT6Q-fEtu7u5vs0w3Do_cuKVPg4YaiDSOoXMUJBzoQBBsc_yujIwnSImXmeOVEGwFzDso">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h2 class="text-3xl font-headline font-extrabold text-white mb-2">Fashion</h2>
+<p class="text-neutral-300 mb-6 text-sm">Timeless aesthetics meets contemporary tailoring.</p>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white w-fit px-6 py-2 rounded-full font-bold text-sm hover:bg-white/20 transition-all">
+                        Shop Now
+                    </button>
+</div>
+</div>
+<!-- Home & Kitchen: Horizontal Focus -->
+<div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Home &amp; Kitchen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist kitchen with marble countertops, high-end wooden cutting boards, and designer appliances in natural morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmX7YoxQPRIMv1Z96dKOuJPCp8sdZ55efnBFbAGtUYJhT-ePL_5LMYTpzilBC9d4OjtNXeR-ipto9ULVpmZKhNW2TqTD_RehZ8osbUaNQ3I5uxdJrE4I0FUTj86kkFiauIWVfkMEJs7BQQf4Ks5nHNKL-kCK_t5earQHE_Prb1gsTAfZL1Q6Xpqa93mZHjWiQhs0LT7AhwtZAI9ZnH3VNZVmquY9u3qfks-aO185r-qNSDjW-iyn3zVCyf0uXRDCiW8SIwOvfVuldw">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-8 flex flex-col justify-end">
+<h2 class="text-3xl font-headline font-extrabold text-white mb-2">Home &amp; Kitchen</h2>
+<p class="text-neutral-300 mb-6 max-w-xs text-sm">Elevated essentials for the heart of your living space.</p>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white w-fit px-6 py-2 rounded-full font-bold text-sm hover:bg-white/20 transition-all">
+                        Shop Now
+                    </button>
+</div>
+</div>
+<!-- Beauty & Wellness -->
+<div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Beauty &amp; Wellness" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Organic skincare products arranged artfully on a light stone surface with fresh green leaves and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAJEXit8we7ICw7LBo32M6WHJy7vydTXXMlFqUxyqDQ-yRAZGQgHXyrmKCShWLwKsTWqrpHYUphhQafQEZcTkaZG4n1SRZtlL1bdIIaJSJAMQD3iIhUoirtBwa46L2RkvmEpzYvb0cAoCdQ7JILH3JTGWT9BZZ6lucoCP36fIth82nNS6v0lbXUsr4FbVslcSlEARPOEHdQHDV-UoBc4y4Jx2GfTjp85p9Ow8EEuHpnWmSyHQ5v07l-yqWBgbOUa2sNnsCzfsvMwJl">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-8 flex flex-col justify-end">
+<h2 class="text-3xl font-headline font-extrabold text-white mb-2">Beauty</h2>
+<p class="text-neutral-300 mb-6 max-w-xs text-sm">Holistic care routines for the conscious individual.</p>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white w-fit px-6 py-2 rounded-full font-bold text-sm hover:bg-white/20 transition-all">
+                        Shop Now
+                    </button>
+</div>
+</div>
+<!-- Outdoor & Travel: Full Width Feature -->
+<div class="md:col-span-12 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[21/9] overflow-hidden min-h-[300px]">
+<img alt="Outdoor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vast mountain range at sunset with a single high-end tent in the distance, dramatic lighting and premium outdoor aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAye26Z3tVSSrNl_dt_QB1uHgtqz074LOD79-8rFuh60dOHA5DQzNq8sTFbX25OkTmcg8Y0NzMtdAj8HpHQ8HnTzi_rEOMZYdMqZaEqI2w6FbRGMFQ_Wr5cAqGJoCnIggwuRrDPk5KMuwsCSZmR1DGAxRR8QafbWZhvCS3P0_ATK6HN5lZ0SbicyD0TCdKBtlY9_DKYxZ9lWuSo0odr2STKHva5Xc87rI7vvub3JszbjA9Xv9AKVb-GAy4tSgvca-1BfjUYL42bdey9">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent p-8 md:p-12 flex flex-col justify-center">
+<div class="max-w-md">
+<span class="text-tertiary-fixed font-headline font-bold text-sm tracking-widest uppercase mb-2">Exploration Ready</span>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-4">Outdoor &amp; Travel</h2>
+<p class="text-neutral-300 mb-8 font-body">Rugged engineering meets sophisticated design for your next escape.</p>
+<button class="bg-gradient-primary text-white px-10 py-4 rounded-full font-bold text-sm inline-flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+                            Discover Adventure
+                            <span class="material-symbols-outlined text-sm" data-icon="navigation">navigation</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Newsletter / Secondary Call to Action -->
+<section class="mt-24 p-12 rounded-2xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-8 border-none">
+<div class="max-w-xl">
+<h3 class="text-3xl font-headline font-bold text-on-surface mb-4">Stay ahead of the trend</h3>
+                <p class="text-gray-500 font-body">Join our elite newsletter and receive early access to new curated categories and exclusive seasonal drops.</p>
+</div>
+<div class="flex w-full md:w-auto gap-2">
+<input class="bg-surface-container-highest border-none rounded-full px-6 py-3 w-full md:w-72 focus:ring-2 focus:ring-primary/40 text-sm" placeholder="Email Address" type="email">
+<button class="bg-on-surface text-surface px-8 py-3 rounded-full font-bold text-sm whitespace-nowrap hover:bg-neutral-800 transition-colors">Sign Up</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-auto bg-neutral-50 dark:bg-neutral-950 font-['Inter'] text-xs uppercase tracking-widest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<span class="text-lg font-black text-neutral-900 dark:text-white">Nexus Retail</span>
+<p class="text-neutral-500 normal-case tracking-normal">Redefining the digital shopping experience through artisanal curation and premium design.</p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-neutral-900 dark:text-white mb-2">Company</span>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors" href="#">Privacy Policy</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors" href="#">Terms of Service</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-neutral-900 dark:text-white mb-2">Shopping</span>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors" href="#">Shipping Info</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors" href="#">Returns</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors" href="#">Newsletter</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-neutral-900 dark:text-white mb-2">Newsletter</span>
+<p class="text-neutral-500 normal-case tracking-normal mb-2">Subscribe to get latest updates.</p>
+<div class="flex">
+<input class="bg-neutral-200/50 border-none rounded-l-lg px-3 py-2 w-full text-[10px]" placeholder="Your Email" type="text">
+<button class="bg-primary text-white px-4 py-2 rounded-r-lg">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-neutral-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-neutral-500">© 2024 Nexus Retail. NDU Mart.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-neutral-400 hover:text-primary cursor-pointer" data-icon="public">public</span>
+<span class="material-symbols-outlined text-neutral-400 hover:text-primary cursor-pointer" data-icon="share">share</span>
+<span class="material-symbols-outlined text-neutral-400 hover:text-primary cursor-pointer" data-icon="rss_feed">rss_feed</span>
+</div>
+</div>
+</footer>
+<!-- Floating Action Button for Support -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-gradient-primary rounded-full shadow-lg shadow-primary/20 text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+</button>
+</div>
+
+<script src="core.js"></script>
+
+</body></html>

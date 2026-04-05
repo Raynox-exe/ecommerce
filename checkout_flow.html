@@ -1,0 +1,459 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NDU Mart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-dim": "#4f4f53",
+                        "inverse-surface": "#0c0f0f",
+                        "on-surface": "#2d2f2f",
+                        "on-background": "#2d2f2f",
+                        "primary": "#9e3c00",
+                        "on-error": "#ffefee",
+                        "surface-tint": "#9e3c00",
+                        "surface-bright": "#f6f6f6",
+                        "secondary-fixed": "#e3e2e6",
+                        "on-tertiary-container": "#513500",
+                        "on-primary": "#fff0ea",
+                        "secondary-container": "#e3e2e6",
+                        "on-tertiary": "#fff0e0",
+                        "surface-container": "#e7e8e8",
+                        "background": "#f6f6f6",
+                        "tertiary-fixed": "#fbb022",
+                        "on-tertiary-fixed": "#352100",
+                        "surface-container-highest": "#dbdddd",
+                        "secondary-fixed-dim": "#d5d4d8",
+                        "surface-dim": "#d3d5d5",
+                        "tertiary": "#7c5300",
+                        "on-primary-container": "#421400",
+                        "primary-fixed-dim": "#fa6303",
+                        "tertiary-dim": "#6c4800",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#3e3f42",
+                        "on-secondary": "#f3f2f6",
+                        "tertiary-fixed-dim": "#eba20d",
+                        "on-primary-fixed": "#000000",
+                        "on-error-container": "#570008",
+                        "error-container": "#fb5151",
+                        "primary-container": "#ff7937",
+                        "error": "#b31b25",
+                        "on-primary-fixed-variant": "#511b00",
+                        "primary-dim": "#8b3400",
+                        "inverse-primary": "#fa6303",
+                        "on-tertiary-fixed-variant": "#5c3d00",
+                        "surface-container-low": "#f0f1f1",
+                        "primary-fixed": "#ff7937",
+                        "on-surface-variant": "#5a5c5c",
+                        "on-secondary-container": "#515155",
+                        "surface": "#f6f6f6",
+                        "outline-variant": "#acadad",
+                        "surface-container-high": "#e1e3e3",
+                        "tertiary-container": "#fbb022",
+                        "error-dim": "#9f0519",
+                        "outline": "#767777",
+                        "surface-variant": "#dbdddd",
+                        "secondary": "#5b5b5f",
+                        "inverse-on-surface": "#9c9d9d",
+                        "on-secondary-fixed-variant": "#5b5b5f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/90 backdrop-blur-xl border-b border-gray-100 sticky top-0 w-full z-50 shadow-sm animate-fade-in">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined text-2xl">local_mall</span>
+            </div>
+            <span class="text-xl font-headline font-extrabold text-neutral-900 tracking-tighter uppercase">NDU <span class="text-primary text-2xl">Mart</span></span>
+        </a>
+        <div id="auth-buttons" class="flex items-center gap-6">
+            <!-- Dynamic Auth buttons injected by core.js -->
+        </div>
+    </div>
+</header>
+<main class="flex-grow pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Checkout Steps -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Progress Indicator -->
+<nav class="flex items-center gap-4 text-xs font-['Inter'] uppercase tracking-widest text-neutral-400 mb-8">
+<span class="text-orange-800 font-bold">1. Shipping</span>
+<span class="w-8 h-[1px] bg-outline-variant/30"></span>
+<span>2. Delivery</span>
+<span class="w-8 h-[1px] bg-outline-variant/30"></span>
+<span>3. Payment</span>
+</nav>
+<!-- Section 1: Shipping Address -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-extrabold tracking-tight">Shipping Address</h2>
+<span class="material-symbols-outlined text-neutral-300">location_on</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">First Name</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="Julian" type="text">
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Last Name</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="Leandros" type="text">
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Address</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="742 Editorial Avenue, Design District" type="text">
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">City</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="New York" type="text">
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Postal Code</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="10001" type="text">
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Country</label>
+<select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all appearance-none">
+<option>United States</option>
+<option>United Kingdom</option>
+<option>France</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Delivery Method -->
+<section class="space-y-6 pt-6 border-t border-surface-container-high">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-extrabold tracking-tight">Delivery Method</h2>
+<span class="material-symbols-outlined text-neutral-300">local_shipping</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="relative flex cursor-pointer rounded-xl bg-surface-container-lowest p-5 shadow-sm border-2 border-primary ring-1 ring-primary/20">
+<input class="sr-only" name="delivery" type="radio" value="express">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Express Delivery</span>
+<span class="text-sm text-on-surface-variant">2-3 Business Days</span>
+<span class="mt-2 font-semibold text-primary">$15.00</span>
+</div>
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</label>
+<label class="relative flex cursor-pointer rounded-xl bg-surface-container p-5 hover:bg-surface-container-high transition-colors">
+<input class="sr-only" name="delivery" type="radio" value="standard" checked>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Standard Shipping</span>
+<span class="text-sm text-on-surface-variant">5-7 Business Days</span>
+<span class="mt-2 font-semibold text-on-surface-variant">Free</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Section 3: Payment Method -->
+<section class="space-y-6 pt-6 border-t border-surface-container-high">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-extrabold tracking-tight">Payment Method</h2>
+<span class="material-symbols-outlined text-neutral-300">payments</span>
+</div>
+<div class="space-y-4">
+<!-- Apple Pay Quick Action -->
+<button class="w-full py-4 bg-black text-white rounded-full flex items-center justify-center gap-2 font-medium hover:bg-neutral-900 transition-colors">
+                            Pay with Apple Pay
+                        </button>
+<div class="flex items-center gap-4 py-4">
+<div class="h-[1px] flex-grow bg-surface-container-high"></div>
+<span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Or pay with card</span>
+<div class="h-[1px] flex-grow bg-surface-container-high"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Card Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="0000 0000 0000 0000" type="text">
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-neutral-400">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Expiry Date</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="MM / YY" type="text">
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">CVV</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="***" type="text">
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-2">
+<input class="rounded text-primary focus:ring-primary bg-surface-container-highest border-none h-5 w-5" type="checkbox">
+<span class="text-sm text-on-surface-variant">Billing address same as shipping</span>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<div class="pt-8">
+<button id="checkoutBtn" class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold py-5 rounded-full text-lg shadow-lg shadow-primary/20 hover:scale-[1.01] active:scale-95 transition-all">
+                        Complete Secure Purchase
+                    </button>
+<p class="text-center text-xs text-neutral-400 mt-4 px-12">
+                        By completing your purchase, you agree to NDU Mart's Terms of Service and Privacy Policy.
+                    </p>
+</div>
+</div>
+<!-- Right Column: Order Summary (Sidebar) -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-3xl p-8 sticky top-24">
+<h3 class="text-xl font-bold mb-8">Order Summary</h3>
+<!-- Item List -->
+<div id="checkoutItemsList" class="space-y-6 mb-8">
+    <!-- dynamically injected here -->
+</div>
+<!-- Totals -->
+<div class="space-y-3 pt-6 border-t border-outline-variant/20 text-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span id="checkoutSubtotal">$0.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant font-medium">
+<span>Shipping</span>
+<span id="checkoutShipping">$0.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Estimated Taxes</span>
+<span>$0.00</span>
+</div>
+<div class="flex justify-between text-lg font-extrabold pt-4 text-on-surface">
+<span>Total</span>
+<span id="checkoutTotal">$15.00</span>
+</div>
+</div>
+<!-- Discount Code -->
+<div class="mt-8 pt-6 border-t border-outline-variant/20">
+<div class="flex gap-2">
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-2 text-sm focus:ring-primary/20" placeholder="Promo Code" type="text">
+<button class="bg-on-surface text-surface rounded-xl px-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors">Apply</button>
+</div>
+</div>
+<!-- High Trust Indicators -->
+<div class="mt-12 space-y-4">
+<div class="flex items-center gap-3 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+                            Norton Secured &amp; Encrypted
+                        </div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-lg">published_with_changes</span>
+                            60-Day Editorial Returns
+                        </div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-neutral-100 dark:bg-neutral-950">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-black text-neutral-800 dark:text-neutral-200 uppercase tracking-tighter">
+                NDU Mart
+            </div>
+<div class="flex flex-wrap justify-center gap-8 text-xs font-['Inter'] uppercase tracking-widest text-neutral-400">
+<a class="hover:text-orange-800 transition-all" href="#">Sustainability</a>
+<a class="hover:text-orange-800 transition-all" href="#">Shipping &amp; Returns</a>
+<a class="hover:text-orange-800 transition-all" href="#">Privacy</a>
+<a class="hover:text-orange-800 transition-all" href="#">Terms</a>
+<a class="hover:text-orange-800 transition-all" href="#">Contact</a>
+    <div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+        <div class="text-lg font-black text-neutral-800 dark:text-neutral-200 uppercase tracking-tighter">
+            NDU Mart
+        </div>
+        <div class="text-[10px] text-neutral-400 font-medium">
+            © 2024 NDU Mart. EDITORIAL EXCELLENCE IN RETAIL.
+        </div>
+    </div>
+</footer>
+
+<script src="core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('checkoutItemsList');
+    const sub = document.getElementById('checkoutSubtotal');
+    const tot = document.getElementById('checkoutTotal');
+    const btn = document.getElementById('checkoutBtn');
+
+    let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    let subtotal = 0;
+
+    if (cartItems.length === 0) {
+        if(list) list.innerHTML = '<p class="text-xs text-neutral-500">Your cart is empty.</p>';
+        if(btn) {
+            btn.innerText = 'Go back to Shop';
+            btn.onclick = () => window.location.href = 'index.html';
+        }
+        return;
+    }
+
+    if(list) list.innerHTML = cartItems.map(item => {
+        subtotal += parseFloat(item.price) * parseInt(item.quantity);
+        return `
+        <div class="flex gap-4">
+            <div class="w-20 h-20 rounded-xl flex-shrink-0 bg-neutral-100 flex items-center justify-center text-xs text-neutral-400 border border-neutral-100 overflow-hidden">
+                <img src="${item.imageUrl || 'images/default.png'}" class="w-full h-full object-cover">
+            </div>
+            <div class="flex flex-col justify-between py-1">
+                <div>
+                    <h4 class="font-bold text-sm leading-tight">${item.name}</h4>
+                    <p class="text-xs text-on-surface-variant">Qty: ${item.quantity}</p>
+                </div>
+                <span class="font-bold text-sm">$${parseFloat(item.price).toFixed(2)}</span>
+            </div>
+        </div>
+        `;
+    }).join('');
+
+    let shippingCost = 0;
+    const updateDisplay = () => {
+        if(sub) sub.innerText = `$${subtotal.toFixed(2)}`;
+        if(tot) tot.innerText = `$${(subtotal + shippingCost).toFixed(2)}`;
+        if(btn) btn.innerText = `Complete Secure Purchase — $${(subtotal + shippingCost).toFixed(2)}`;
+    };
+
+    updateDisplay();
+
+    document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            shippingCost = e.target.value === 'express' ? 15 : 0;
+            const shipDisplay = document.getElementById('checkoutShipping');
+            if(shipDisplay) shipDisplay.innerText = shippingCost === 0 ? 'FREE' : `$${shippingCost.toFixed(2)}`;
+            updateDisplay();
+        });
+    });
+
+    if(btn) {
+        btn.onclick = async (e) => {
+            e.preventDefault();
+            
+            const userStr = localStorage.getItem('user');
+            if (!userStr) {
+                alert('You must be logged in to checkout.');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const items = cartItems.map(i => ({ productId: i.productId || i.id, quantity: i.quantity }));
+            
+            try {
+                const resp = await window.authFetch('/orders', {
+                    method: 'POST',
+                    body: JSON.stringify({ items })
+                });
+
+                const data = await resp.json();
+                if (resp.ok) {
+                    localStorage.removeItem('cartItems');
+                    localStorage.removeItem('cartCount');
+                    const orderId = data.order ? data.order.id : null;
+                    showOrderSuccessModal(orderId);
+                } else {
+                    showCheckoutError(data.error || data.message || 'Checkout failed.');
+                }
+            } catch (err) {
+                console.error(err);
+                showCheckoutError('An error occurred during checkout. Please try again.');
+            }
+        };
+    }
+});
+
+// ========== Custom Modals ==========
+
+function showOrderSuccessModal(orderId) {
+    const modal = document.createElement('div');
+    modal.id = 'order-success-modal';
+    modal.className = 'fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4';
+    modal.innerHTML = `
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl" style="animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both">
+            <div class="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <span class="inline-block px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-widest rounded-full">Confirmed</span>
+            <h2 class="text-2xl font-extrabold text-gray-900 mt-3 mb-1">Order Placed!</h2>
+            <p class="text-gray-500 text-sm mb-1">Your order has been successfully placed and is being processed.</p>
+            ${orderId ? `<p class="text-xs text-gray-400 mb-6">Order ID: <span class="font-bold text-gray-800">#ORD-${String(orderId).padStart(5,'0')}</span></p>` : '<div class="mb-6"></div>'}
+            <div class="flex gap-3">
+                <button onclick="window.location.href='user_account_dashboard.html'" 
+                    class="flex-1 bg-[#F96302] hover:bg-orange-600 text-white py-3.5 rounded-xl font-bold transition-all shadow-lg">
+                    View Orders
+                </button>
+                <button onclick="window.location.href='index.html'"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-3.5 rounded-xl font-bold transition-all">
+                    Shop More
+                </button>
+            </div>
+        </div>
+        <style>
+            @keyframes popIn {
+                from { opacity: 0; transform: scale(0.7); }
+                to   { opacity: 1; transform: scale(1); }
+            }
+        </style>
+    `;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+}
+
+function showCheckoutError(message) {
+    const modal = document.createElement('div');
+    modal.id = 'checkout-error-modal';
+    modal.className = 'fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4';
+    modal.innerHTML = `
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl" style="animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both">
+            <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </div>
+            <h2 class="text-xl font-extrabold text-gray-900 mb-2">Checkout Failed</h2>
+            <p class="text-gray-500 text-sm mb-6">${message}</p>
+            <button onclick="document.getElementById('checkout-error-modal').remove()"
+                class="w-full bg-red-500 hover:bg-red-600 text-white py-3.5 rounded-xl font-bold transition-all">
+                Try Again
+            </button>
+        </div>
+        <style>@keyframes popIn { from { opacity:0; transform:scale(0.7); } to { opacity:1; transform:scale(1); } }</style>
+    `;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+}
+</script>
+</body></html>

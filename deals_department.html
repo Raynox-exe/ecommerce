@@ -1,0 +1,487 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NDU Mart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-semibold text-accent border border-accent rounded-lg hover:bg-accent hover:text-white transition-all duration-300">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+<!-- Top Navigation -->
+
+<main class="max-w-screen-2xl mx-auto flex">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col gap-2 py-8 h-[calc(100vh-80px)] w-72 sticky left-0 top-20 bg-white/80 backdrop-blur-xl border-r border-zinc-200/20">
+<div class="px-6 mb-6">
+<h2 class="text-lg font-bold text-[#2d2f2f] font-headline">Categories</h2>
+<p class="text-xs text-on-surface-variant">Explore the Collection</p>
+</div>
+<nav class="flex flex-col h-full overflow-y-auto pb-4">
+
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="shop_by_category.html">
+            <span class="material-symbols-outlined">verified</span>
+            <span class="font-inter text-sm">Official Store</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="home_garden_department.html">
+            <span class="material-symbols-outlined">kitchen</span>
+            <span class="font-inter text-sm">Appliances</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="computing_department.html">
+            <span class="material-symbols-outlined">smartphone</span>
+            <span class="font-inter text-sm">Phones &amp; Tablets</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="beauty_health_department.html">
+            <span class="material-symbols-outlined">health_and_safety</span>
+            <span class="font-inter text-sm">Health &amp; Beauty</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="home_garden_department.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-inter text-sm">Home &amp; Office</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="computing_department.html">
+            <span class="material-symbols-outlined">tv</span>
+            <span class="font-inter text-sm">Electronics</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="fashion_department.html">
+            <span class="material-symbols-outlined">apparel</span>
+            <span class="font-inter text-sm">Fashion</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined">shopping_basket</span>
+            <span class="font-inter text-sm">Supermarket</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="computing_department.html">
+            <span class="material-symbols-outlined">laptop_mac</span>
+            <span class="font-inter text-sm">Computing</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="baby_products_department.html">
+            <span class="material-symbols-outlined">child_care</span>
+            <span class="font-inter text-sm">Baby Products</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="gaming_department.html">
+            <span class="material-symbols-outlined">sports_esports</span>
+            <span class="font-inter text-sm">Gaming</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined">more_horiz</span>
+            <span class="font-inter text-sm">Other categories</span>
+        </a></nav>
+<div class="mt-auto px-6 pb-8">
+<div class="editorial-gradient p-6 rounded-xl text-white">
+<p class="text-xs font-bold uppercase tracking-widest mb-2 opacity-80">Flash Offer</p>
+<p class="text-lg font-bold leading-tight mb-4">Exclusive Deals</p>
+<button class="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform">Shop Now</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<section class="flex-1 px-6 md:px-12 py-10">
+<!-- Hero Banner Section -->
+<div class="relative w-full h-80 rounded-3xl overflow-hidden mb-12 bg-surface-container-low flex items-center justify-between p-12">
+<div class="z-10 max-w-lg">
+<span class="text-primary font-extrabold tracking-widest text-xs uppercase mb-4 block">Limited Time Event</span>
+<h1 class="text-5xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6">Exclusive Deals</h1>
+<p class="text-lg text-secondary-dim mb-8">Hand-picked premium selections curated for the discerning shopper. Quality meets velocity.</p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold px-8 py-3 rounded-full active:scale-95 transition-transform shadow-lg shadow-primary/20">Explore Sale</button>
+<div class="flex items-center gap-2 text-on-surface font-semibold px-4">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span>Ends in 04:22:15</span>
+</div>
+</div>
+</div>
+<div class="hidden lg:block absolute right-[-5%] top-[-10%] w-2/3 h-[120%] rotate-3">
+<img alt="High-end tech products floating in a void" class="w-full h-full object-cover rounded-3xl shadow-2xl" data-alt="clean overhead shot of luxury electronic devices and lifestyle accessories arranged on a sleek neutral background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhfMnptaPy4nwxWIOoPskK1Yxu3S18szDjfsbDtP6GpGhfLE5ofZixwE6oXU9fjb7BW4Vzc17PAtY0wqfUARTe7F88tjKfBKsI-qtZylesmPnhtA3M69uBd6bmS3A40Cwb1wXE_Gz2JiN-ej2ozEcpp-Qy7LfUxYDAGrR0fg02g7orUGW-4JRmsxD-Gf0MTQj1c34eVsMZ8ifjvKeFD22jNFF2IyiVZ1XxttiBzUHmiT6InQZ2a7w91KEujBwPcIWbjCRmbvwUQlpY">
+</div>
+</div>
+<!-- Bento Filter Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex gap-2">
+<button class="bg-primary-container text-on-primary-container font-semibold px-4 py-2 rounded-lg text-sm">All Deals</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Flash Sales</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Over 50% Off</button>
+</div>
+<div class="flex items-center gap-2 text-sm text-zinc-500">
+<span>Sort by:</span>
+<select class="bg-transparent border-none font-semibold text-on-surface focus:ring-0 cursor-pointer">
+<option>Biggest Discount</option>
+<option>Newest First</option>
+<option>Price: Low to High</option>
+</select>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-45% Off</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-tighter">Flash Sale</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Premium Wireless Headphones" class="w-full h-full object-cover mix-blend-multiply" data-alt="professional product shot of premium matte black wireless headphones on a minimalist grey background with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBILdmiQ0fHP9vMhhS7n08AnvwuGloxPFb4ECNQjCuvOTlj4iOvfYwOw7nfy76Yc_QEsa4q4Bto5P9wQnnETqP5pTr231dA1mGwswE0W4c6K38gK9cKO1ZtmF_KFEadteW5xyrmaCe1P9-TNOOeUYcl9KYCp2wintGEXK2EDylWq3T7-ysJsg4HXB7P3bnmitCngo1GkzE_WDBCgkHvxgDXIpoCytCX-hvaDeuK6tATIONenHUXOAG27R4fh1uWXxLo7n-KbSUkhwc">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Electronics</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Acoustic Pro Headphones</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$129.00</span>
+<span class="text-sm text-zinc-400 line-through">$240.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-20% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Minimalist Watch" class="w-full h-full object-cover mix-blend-multiply" data-alt="close up of a modern minimalist wrist watch with a white face and tan leather strap on a clean white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwdEqluOFHLeD_yWy-lWCJwOIA5WqczTKVnJmkI80SU6UjCwUehQfbGhzhEtpiDRKUGc8CGLvk8sBiH_3CzFC4DW-yejvRfqLKyQOPpzq0ePHPI4ickSk9dxXr7o_jY6Lw5DGWGdsKkXCFZSLi3qnW9NDX1NQP18Z0PmQCoQ6lIuPxZBmenpKkSngxPvG9UuaN1K793Tf9z8JKYqQFVVYSPv1kT3exqRuwXrXPwKMhIePxFdx-3lgfAxpdyWUIAbZ0O1h8R6prw75e">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Fashion</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Epoch Leather Watch</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$85.00</span>
+<span class="text-sm text-zinc-400 line-through">$105.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-60% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Designer Sunglasses" class="w-full h-full object-cover mix-blend-multiply" data-alt="luxury sunglasses with tortoiseshell frames and gold hardware reflecting a soft sunset glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFsvaZWWDAuhoaaFjjEWaSHfTRZnvlHvE6sPPHL00ML77u9VnvdZg9nrSaVs_v6HCXTarV4lsyNpkWP_QPgpxXgIOWPq923Hpqz3GQ80-hY8vUShnfpqUGZUEoqp79lrqSWSmzLnfvJmeuS2fshwXw9nYRDCpmvntQ87HvMFkdXjWmgyEFyeb3Xf55YOhgthyKkxptvQ8Gny6SmltomI42hzLgHgSwhDpT3susz11H7-B5G3BkmTdR7fPUmfCsjw3iPzBTykgcNqt3">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Fashion</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Aviator Heritage Shades</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$45.00</span>
+<span class="text-sm text-zinc-400 line-through">$112.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-tighter">Flash Sale</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Athletic Shoes" class="w-full h-full object-cover mix-blend-multiply" data-alt="vibrant red athletic running shoes positioned dynamically on a dark grey pedestal with dramatic highlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAecBFAuyr8y9aAEACyrSYiq8Yl48ZgkT1l0fzqLnTApyS_D9qYKhP7Jc9_EfnX12BVIJiLiyxz0ALUt9-lIPIlxC2uyxJvfC9QtmvfUs16r2ABMpOgNcGRzlXN7SuZxlHrDMURPvN6nbkf63EO5ZiNznopKYUX97kXXMZx6wSU_0v7oMZeDvkN8kh_m3L_-xrUKuE1kOuOb0LBRMi0RiOd0qVVDcGhK0DhRu3gvxz4M-hShXRfgs52Medv4mPALo4KUqem_Cji8io">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Fashion</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Velocity Run Sneakers</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$99.00</span>
+<span class="text-sm text-zinc-400 line-through">$180.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-30% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Smart Speaker" class="w-full h-full object-cover mix-blend-multiply" data-alt="modern grey fabric smart speaker on a light wood tabletop with a soft blurred living room background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAyMk41HKjhMghKE3xh0f_R6nV8IwGVM5G8JrwBceoIB82LiiqB0IuFRniqEDme040OfaKEcSI6RtJQyig9RKHOXYzbgfA5EzVqmI_WW_dDNVS-jsruzE0-PpYqTI_oF5FvvfbGvXfhbCUR-pfFDb8W8ZkBElF_nQpaE-iMEp_WhHreYjSzT6NGwm4j6f4Jwnjal4MIbT0BpWh3B83l0MUaU-gja6YpxtUIrM4Z9qF9PQ6g3q4RWNqk92FmlRWZhleP9SmLKsPCUfr">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Electronics</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Orbital Smart Speaker</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$69.00</span>
+<span class="text-sm text-zinc-400 line-through">$99.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-15% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Compact Tablet" class="w-full h-full object-cover mix-blend-multiply" data-alt="sleek modern tablet device with a colorful abstract wallpaper on a dark slate surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6zkY8Cr7VnpLdbvRXlbY8skV92xfOQkICnQMca8Ptvsnzls88Q-XR12RFAwzbJJ8gC1sxI96DKJZoC2ys-5Z84SC2Jpof4BHjOlJPjZBWMO2WKhZSv-vRoK1QYadXaM72H2xhFQzhHHGf1lFZHEEZLBfq6TO8Bc-l876FTWdAiIligpdlqi76gOewLMFAVqQruwwQWk1YIbLUy6BYXYxXMT80tv6XYo0xbsYjpPrnOd2ALshIYG0s1dJSfWfBriMIdC7B9zMn5h3S">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Computing</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Lumina Pad 11"</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$420.00</span>
+<span class="text-sm text-zinc-400 line-through">$495.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-50% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Premium Smartphone" class="w-full h-full object-cover mix-blend-multiply" data-alt="close up macro shot of the camera lenses of a premium navy blue smartphone with glass reflecting light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHq49FBHmx4LxmGwMIQgZLsd14ZwPYjp0J0p2jOwu9W630rGJqItV8w9ocdyvPDp4OkKoXkhofNiyU7CoafkNQLpyoLk-TfKe7RQSY6ockEQJ7NukM_u5__sTxyNefFQOXuEyghO3j08UO8xk0D-PardGfRe4wII6-OgOjtgWTxucc3zQKgpT-X59oMb7DwwYfpr7im8YP7vYQsdIPj-gOPX7GWXhXP7Lx8AdDuUCNj2zTDLGCMkxYTPIfcrKfuvL3f-bQuQeZ-rao">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Electronics</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Nexus Pro Max</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$550.00</span>
+<span class="text-sm text-zinc-400 line-through">$1,100.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-10% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Modern Sofa" class="w-full h-full object-cover mix-blend-multiply" data-alt="interior design shot of a minimalist grey sofa with textured pillows in a brightly lit modern apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4nwePigOx_vqFNnqQoFHog7NiWQqAhuVqK1oMKq4jjtxxTKNZmXRRaFgCUKuUtCJbG5ynqRy4QaTox93wQTwpnd_lBipCTRijs4VVdZWQDaAhxhuABMIXWOkOLhrtrutGljuqxym1VwnWLZtb8PJ6ggkcyY-hD0_jPNWKu8e-otUG8VwGhX1--OYM5r-KPCejXunPdeLxwoDlNexb7l25jCCv62raYtFuuhY58gfrgsARgBq2V-xXFzp76SFEGoIAjfRjRIa8o8c2">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Home &amp; Office</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Scandi Loft Sofa</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$799.00</span>
+<span class="text-sm text-zinc-400 line-through">$880.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 9 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-25% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Mechanical Keyboard" class="w-full h-full object-cover mix-blend-multiply" data-alt="backlit mechanical keyboard with custom keycaps in a dark gaming setup with blue and purple neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdVfmSePygROLn4mmJcLmJ_z14sFHMWVMPy3_2GOUbSR2a6pe1g_ZNlQwkNKxWvR9zzPvUuSAae9kcZETKns_B3VsNaL-uF9vUCxrOwBBFHmgWnFXn11cwr4rRrftbjupRzhyCN4Mk3h1k_yr09zr4yOQCheVZ8p6uTfeRb8aQ05U0J8m4Q2d_bkVeQvzUa5vCcVyfaw0Sq_tdyPk0bH4vSPQsFw556xNuNu7hp5_txmydCc8TRirLcB6SUq7uFm6LlNWzO_mFUnS-">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Computing</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">ClickPro Mechanical</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$149.00</span>
+<span class="text-sm text-zinc-400 line-through">$199.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 10 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-40% Off</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-tighter">Flash Sale</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Gaming Headset" class="w-full h-full object-cover mix-blend-multiply" data-alt="professional gaming headset with rgb lighting and a boom microphone isolated on a black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj1TlW7dZProJLIo3KHKtKlgiYZOCzItUgsXYsjfLpgWhZtTRdSK74n1R597GlUANigsOS6KVTW1fbhIVjEK8pdKI70jyhp9gvFmfeTdYHQ-cDcm0NJfSdrHE7QkSFb-jGZ1ErVv-Ecmcsaz7396OeqtWy3jpL-6oCdBmvtXGaqa3Sy9u9F9sqdNhwRxK1VhBbmiGZcgYib9t_zNOAL8p-6uMpszAONDpedW6FaAPBR5jqomh8zjrtBs3C7-IvUET1cw-fGdJ6HUVq">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Electronics</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Immersive G-Series</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$89.00</span>
+<span class="text-sm text-zinc-400 line-through">$150.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 11 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-35% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Espresso Machine" class="w-full h-full object-cover mix-blend-multiply" data-alt="high end chrome espresso machine brewing a shot of coffee into a small glass on a dark countertop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRUblbWfLlWpy-1WRTrwKKMq5iJzxDZA_rIF7TdN9SlVsN1B2e_aQWW02wgg7UOi0YKkeibEaBgnyfcoNhrOmMqSzLjm2XR1Itabcg8TwYQCVNQEtqaNZOngd6zbx0E8wTIbvI1a7CUnrNcFReIa1Nm45MkZ9PlwEs--_jUNzPPukFigKSdJSDvZWrc8OpetXwaYaZpHIAFayszC9tqguYTSwNINxz7ZLBtyuxu9Y4evQOCcS1u_GUXoOlmDpaGgEAfFarrF3ekdQp">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Supermarket</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Barista Elite Pro</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$299.00</span>
+<span class="text-sm text-zinc-400 line-through">$460.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 12 -->
+<div class="group cursor-pointer">
+<div class="relative bg-surface-container-lowest rounded-xl p-4 transition-all group-hover:translate-y-[-4px] group-hover:shadow-xl group-hover:shadow-on-surface/5">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">-55% Off</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container mb-4">
+<img alt="Natural Skincare Set" class="w-full h-full object-cover mix-blend-multiply" data-alt="set of luxury skincare bottles and jars on a smooth marble tray with a single monstera leaf shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-QYOU9BN2Ykz1R3-iVXGA6AE_NiiT7zr__oTJcmuaLGymTOfWSkr830EAegd99uoJlWI05Yb2uc5FNoNdBnfAy5_hRr_A6Q4FgztYU5jS5pmrob30G0jO_eFciewe9prDnhW9MTXZlRnMnWY6_btfUdF6RKud92ukVt-TQHY8DsVvrysygjQ0_FtWCz5zs59pO8_ZpwFLsbIkt5NtSQh-pPdP94nJa7VN76-ZDt0LKGT8CchUDY-4VijVqtOFEwfrZApSoS5Dtf_K">
+</div>
+<div class="space-y-1">
+<span class="text-xs text-zinc-400 font-medium">Health &amp; Beauty</span>
+<h3 class="text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Glow Radiance Kit</h3>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-lg font-extrabold text-on-surface">$32.00</span>
+<span class="text-sm text-zinc-400 line-through">$72.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="flex flex-col items-center justify-center py-20">
+<p class="text-sm text-zinc-500 mb-6 font-medium">Viewing 12 of 1,248 deals available today</p>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-bold px-12 py-4 rounded-full transition-all active:scale-95">Load More Curated Deals</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 bg-[#f0f1f1] dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto font-inter text-xs text-zinc-500">
+<div class="space-y-4">
+<div class="text-xl font-black text-zinc-800 dark:white">CuratedRetail</div>
+<p class="leading-relaxed">Elevating the e-commerce experience through intentional selection and high-trust velocity.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-zinc-800 dark:text-white uppercase tracking-widest text-[10px]">Company</h4>
+<ul class="space-y-2">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00]" href="#">About Us</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00]" href="#">Contact</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00]" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-zinc-800 dark:text-white uppercase tracking-widest text-[10px]">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00]" href="#">Shipping Policy</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00]" href="#">Returns</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-[#9e3c00]" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-zinc-800 dark:text-white uppercase tracking-widest text-[10px]">Newsletter</h4>
+<div class="relative">
+<input class="bg-white dark:bg-zinc-800 border-none rounded-xl py-3 px-4 w-full text-xs focus:ring-1 focus:ring-primary/20" placeholder="email@example.com" type="email">
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-[#9e3c00] font-bold">Sign Up</button>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary" data-icon="share">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary" data-icon="public">public</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-6 border-t border-zinc-200/50 dark:border-zinc-800/50 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p>© 2024 Curated Retail Experience. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+
+<script src="core.js"></script>
+
+</body></html>

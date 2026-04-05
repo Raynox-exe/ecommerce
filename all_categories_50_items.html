@@ -1,0 +1,370 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #F96302, #ff7937);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary selection:bg-accent/20 selection:text-primary">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-semibold text-accent border border-accent rounded-lg hover:bg-accent hover:text-white transition-all duration-300">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+<!-- TopNavBar -->
+
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col gap-2 py-8 h-[calc(100vh-80px)] w-72 sticky left-0 top-20 bg-white/80 backdrop-blur-xl border-r border-zinc-200/20">
+<div class="px-6 mb-6">
+<h2 class="text-lg font-bold text-[#2d2f2f] font-headline">Categories</h2>
+<p class="text-xs text-on-surface-variant">Explore the Collection</p>
+</div>
+<nav class="flex flex-col h-full overflow-y-auto pb-4">
+
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="shop_by_category.html">
+            <span class="material-symbols-outlined">verified</span>
+            <span class="font-inter text-sm">Official Store</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="home_garden_department.html">
+            <span class="material-symbols-outlined">kitchen</span>
+            <span class="font-inter text-sm">Appliances</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="computing_department.html">
+            <span class="material-symbols-outlined">smartphone</span>
+            <span class="font-inter text-sm">Phones &amp; Tablets</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="beauty_health_department.html">
+            <span class="material-symbols-outlined">health_and_safety</span>
+            <span class="font-inter text-sm">Health &amp; Beauty</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="home_garden_department.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-inter text-sm">Home &amp; Office</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="computing_department.html">
+            <span class="material-symbols-outlined">tv</span>
+            <span class="font-inter text-sm">Electronics</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="fashion_department.html">
+            <span class="material-symbols-outlined">apparel</span>
+            <span class="font-inter text-sm">Fashion</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-[#ff7937]/10 text-[#9e3c00] font-semibold border-r-4 border-[#9e3c00] hover:translate-x-1 transition-transform duration-200" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_basket</span>
+            <span class="font-inter text-sm">Supermarket</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="computing_department.html">
+            <span class="material-symbols-outlined">laptop_mac</span>
+            <span class="font-inter text-sm">Computing</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="baby_products_department.html">
+            <span class="material-symbols-outlined">child_care</span>
+            <span class="font-inter text-sm">Baby Products</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors hover:translate-x-1 transition-transform duration-200" href="gaming_department.html">
+            <span class="material-symbols-outlined">sports_esports</span>
+            <span class="font-inter text-sm">Gaming</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-[#ff7937]/10 text-[#9e3c00] font-semibold border-r-4 border-[#9e3c00] hover:translate-x-1 transition-transform duration-200" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">more_horiz</span>
+            <span class="font-inter text-sm">Other categories</span>
+        </a></nav>
+<div class="mt-auto px-6 pb-8">
+<div class="editorial-gradient p-6 rounded-xl text-white">
+<p class="text-xs font-bold uppercase tracking-widest mb-2 opacity-80">Flash Offer</p>
+<p class="text-lg font-bold leading-tight mb-4">Exclusive Deals</p>
+<button class="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform">Shop Now</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-72 pt-24 pb-20 px-6 max-w-[1400px]">
+<!-- Header Moment -->
+<header class="mb-12">
+<h1 class="text-5xl font-extrabold font-headline tracking-tighter text-on-background mb-4">Explore All Collections</h1>
+<p class="text-stone-500 max-w-2xl text-lg leading-relaxed">Discover a world of curated products. From the latest technology to high-end fashion, we bring you the finest selection from around the globe.</p>
+</header>
+<!-- Department Sections -->
+<div class="space-y-24">
+<!-- Electronics Section -->
+<section id="electronics">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-baseline gap-4">
+<h2 class="text-3xl font-bold font-headline text-on-background">Electronics</h2>
+<span class="text-primary font-bold text-sm tracking-widest uppercase">Premium Tech</span>
+</div>
+<a class="text-sm font-semibold text-stone-500 hover:text-primary transition-colors flex items-center gap-1" href="#">
+                        View Department <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Bento-style Grid -->
+        <div id="electronics-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Dynamic products will be injected here -->
+        </div>
+</section>
+<!-- Fashion Section -->
+<section id="fashion">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-baseline gap-4">
+<h2 class="text-3xl font-bold font-headline text-on-background">Fashion</h2>
+<span class="text-tertiary font-bold text-sm tracking-widest uppercase">Spring Editorial</span>
+</div>
+<a class="text-sm font-semibold text-stone-500 hover:text-primary transition-colors flex items-center gap-1" href="#">
+                        Explore Looks <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+        <div id="fashion-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Dynamic products will be injected here -->
+        </div>
+</section>
+<!-- Home & Kitchen -->
+<section id="home">
+<div class="bg-stone-100 p-12 rounded-3xl grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+<div class="space-y-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">The Modern Home</span>
+<h2 class="text-4xl font-extrabold font-headline leading-tight">Elevate Your Living Space</h2>
+<p class="text-stone-500 leading-relaxed">Thoughtfully designed furniture and appliances that blend functionality with aesthetic beauty.</p>
+<button class="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-stone-800 transition-colors">Shop Furniture</button>
+</div>
+<div class="md:col-span-2 grid grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Product Grid Inset -->
+<div class="bg-white p-4 rounded-2xl group shadow-sm">
+<img alt="Towel" class="aspect-square object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform" data-alt="premium thick cotton white towels stacked on a modern bathroom shelf with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPfkNLztJN12q9oK66G3VAsgZwXXRNIKOv8YVTLEmGu6WoMW3Ts58mwArc4QSSWskUdYc7UtazryG-ws1WjcNevv8QNxlbosROuG6aEKEM8hSybF1yayGJMByDIM-OOkUfigooa2zIbwf1q1E18Y1cK2l0Ki7mVliFBhBtqDXxMHsZR4dAt5HroZNnrWe6zdE-LqcOBLJEbhfKuGaBEuXiVXqfeztU_Y9-bVNBJNBQxi0XRWSL6IHQiX1DQQ0_IpPyop_zLsBWpHLW">
+<h5 class="text-xs font-bold truncate">Cloud-Soft Towel Set</h5>
+<p class="text-primary font-bold mt-1 text-sm">$85</p>
+</div>
+<div class="bg-white p-4 rounded-2xl group shadow-sm">
+<img alt="Chair" class="aspect-square object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform" data-alt="minimalist wooden lounge chair with curved lines in a bright sunlit room with indoor plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Kvm0Cx5bHy6T_MI96AQDMsjaCfFnZMEHLNLFbSIKDPJFwGmEKVeCzzyxqYqpM-Ek5UOCTxGzLeJJRHQrdqmjHywBfDkEpziY8isQVx-OQmCrOgFE-ZQQ2y_o5JzcHFgezRjB8uASOhdhZhISRLDRjMkIizg-BB35FJtCqaiPBsbYmUPDOVVtRhr_ieXqRGbWB7aE57j_1BPa-Yv56xBP68rT1x2A0nO-ZqMROpib5IISkO9UpS1ohANIEKxxWTryUNm_dzD4dFDt">
+<h5 class="text-xs font-bold truncate">Nordic Curve Chair</h5>
+<p class="text-primary font-bold mt-1 text-sm">$320</p>
+</div>
+<div class="bg-white p-4 rounded-2xl group shadow-sm hidden lg:block">
+<img alt="Kettle" class="aspect-square object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform" data-alt="designer matte black electric tea kettle on a clean white countertop with minimal decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwvhSVGLZDkukKUUvNXwjo02_t9FuoVGHamhNZVrmI2D-oMpe2vsPKkbM-W7u1Zwl3Fjb4ZCitRq_iy5mDaQaTWSkvbr7z9T4VMIp83t3ThFYp88ILzzhR7tnmXZXivf8GREFKAAB9U5y5EGzO4m6HEyxuxG-8erXuGALNhlpaOi5wBy0Klvvz7guG3GgEEJDKacAOHiyF0T_5nRJOyADrLQj9_WwnHTJrOwur2f9r5jNQp_YYzWBaMs9YkKtfoCqXD2Tnv3s1Mq7O">
+<h5 class="text-xs font-bold truncate">Matte Pour-Over Kettle</h5>
+<p class="text-primary font-bold mt-1 text-sm">$115</p>
+</div>
+<div class="bg-white p-4 rounded-2xl group shadow-sm">
+<img alt="Lamp" class="aspect-square object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform" data-alt="contemporary ceramic table lamp with warm glow in a cozy living room setting at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPIrDLGARSpwYQb0ZsbjrB7aYRKGu1MY-qFqLmPi62_yGt5pdlOZeptC50bOUJmx29hHS7z1Q-nc40zeTeRusBgXj3OIesDhKGiFHfoJ8VDrG5PZ67FbYnnBYFziU0TuqQfqgkVVVthBGz1IxpArmTFyJbZRWH2S2wbwBMmWoLVxsAJ6ibBdvUzRkufHJeHMewflNJJO0JbvXyMnyDdTZkskHbHcI12Mv-yGs_1fBW3CFkie8vBLbbFMTfE2ZUX4cYLUxL_HlR9-Ov">
+<h5 class="text-xs font-bold truncate">Terra Ceramic Lamp</h5>
+<p class="text-primary font-bold mt-1 text-sm">$195</p>
+</div>
+<div class="bg-white p-4 rounded-2xl group shadow-sm">
+<img alt="Coffee Maker" class="aspect-square object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform" data-alt="professional stainless steel espresso machine with steam wand in a high-end modern kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2GDAWrt8YV-xJa9fxfBTsPD1WPXtMzpUnYP9GqBY29FnfJEDLldrXO4rqkb4B-NUXwWsMAR5oV6bN1ptowmQlpTU8A5lKpnWI1BpCgCGm53dJJ9AXSy-G8i0iXS7eo8RJfU0HRklZSX9AgQRXFJ26QsEeE-9-itzfabBQ5J9uCo-p6hCJDqnUayQRce6ESH2E0lXGgQxXqokM9yIilI5WKXbbxBPiqxKhDsKw9BD60nKbdpTR7iuUfsZ8vxGL_LzVyyaYS_hV6qu1">
+<h5 class="text-xs font-bold truncate">Precision Espresso Pro</h5>
+<p class="text-primary font-bold mt-1 text-sm">$550</p>
+</div>
+<div class="bg-white p-4 rounded-2xl group shadow-sm hidden lg:block">
+<img alt="Knife Set" class="aspect-square object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform" data-alt="artisan japanese kitchen knives on a magnetic strip against a dark slate wall in a professional kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJzku5j1RUOZg3gJ7XkpNj-hD0rHyufsfbUCZOAXTQ85UiLIf3a3SFb2rPeNEAEaPqYXjnUZePW2h1Xu3uC8zJ5qR7Vqvc_CenrqnkhFGi9Wd93kHVQZj2X2BkeHzSg8o05E8_Ii1Q9FqHCsEXtNLcuOl6xQ-HizhKsEWnKXylX9O6CBAmtgZq6vbtJZi2TfG3np3vyxOQreDlHQbzzYNFf2DhqeJyl98qsdw3E8AJtRW807QfuGh15eOt_hEktnKhf3Sy1qidEBW">
+<h5 class="text-xs font-bold truncate">Katana Blade Series</h5>
+<p class="text-primary font-bold mt-1 text-sm">$280</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Beauty & Health -->
+<section id="beauty">
+<div class="flex items-center gap-4 mb-10">
+<h2 class="text-3xl font-bold font-headline">Beauty &amp; Wellness</h2>
+<div class="h-px bg-stone-200 flex-1"></div>
+</div>
+        <div id="beauty-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Dynamic products will be injected here -->
+        </div>
+</section>
+<!-- Sports & More Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Baby Products -->
+<div class="bg-orange-50 rounded-3xl p-10 flex flex-col justify-between overflow-hidden relative">
+<div class="z-10">
+<h2 class="text-3xl font-bold font-headline text-orange-950 mb-2">Little Explorers</h2>
+<p class="text-orange-700/80 mb-6">Safe, soft, and sustainable baby essentials.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/60 backdrop-blur p-4 rounded-2xl group cursor-pointer hover:bg-white transition-all">
+<img alt="Baby Toy" class="aspect-square object-cover rounded-xl mb-2" data-alt="wooden montessori style baby toys in soft pastel colors on a neutral sheepskin rug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ersNjTgdiz_HhLEdmnGKZ3zfNpEdPq3l37NUARXsXG9i9ZCyeOgP4RgkJfu9oPo4lC_lGQn9Jw50IyJYSVsUV4N26N5JJKC64So7Tr8TCF2Gw7LmHtbUcdSypvqyEogzZMG_0xSRBB4hOCFMjJ9CppAV19CUg6KtSaEM6GcEu3I8Q20feM4o7f29g4bBxonBO8WU-D9fxpBGyUxXsiBpxDf0OdFNwUWndu8jxO81ktDTYyLr9GoV0KkokqwSfxjq62po07GhyONx">
+<span class="text-xs font-bold">Wooden Play Set</span>
+</div>
+<div class="bg-white/60 backdrop-blur p-4 rounded-2xl group cursor-pointer hover:bg-white transition-all">
+<img alt="Baby Clothes" class="aspect-square object-cover rounded-xl mb-2" data-alt="cute infant organic cotton onesies hanging on a simple wooden rack in a sun-drenched nursery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-va53jOINVH-9nFHLlUMucCIhpOFqETKNS4XotdfsqStVbRxHbJdnPn-duTGPaMX7JvTUeCEXChnEjvjDhxXptS_yXj602yIuzt8irMK2J1NWo2MaJXCZtr3UqZPNb3i7lJE6SSg6aerxoTkQP69RKteY5P18GRJlBAbg_ZeVek9KAWPnTzqUmsxViFA0wRQai9bOuldMB5zB61basmrMyA8fkTRx7sekDpa6nwjKHMaECTL_0r8DtUR5E10VR8doIMT0Nkj3u1Vw">
+<span class="text-xs font-bold">Organic Onesie</span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center z-10">
+<button class="text-orange-900 font-bold border-b-2 border-orange-900">Browse Baby Care</button>
+</div>
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-orange-200/50 rounded-full blur-3xl"></div>
+</div>
+<!-- Sports & Outdoors -->
+<div class="bg-stone-900 rounded-3xl p-10 text-white flex flex-col justify-between">
+<div>
+<h2 class="text-3xl font-bold font-headline mb-2">Peak Performance</h2>
+<p class="text-stone-400 mb-6">Equipping you for every adventure.</p>
+<div class="grid grid-cols-3 gap-4">
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-2 bg-stone-800">
+<img alt="Yoga Mat" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="rolled high-quality rubber yoga mat in deep teal leaning against a minimal concrete wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3_D4muFxkQQ_MDOGasY9V0y2suLwD04GZtz5JbVDRSpJhAp15eFlp1ELtenjRlwhZTFJ8skLQdIunRF0DuwuUpSh0igh-UjYuPhA15mIR0fxSKHjR0Fyygue2purQEuPSBLjcP_Pd20sag6AzcMVeYOAZJ7aD49CuqggA9ouGKiO7-yZsv-ttKXIAB5Su_28O9UtHOq-tvi25bDWacaI0QyZW5qUugNTpciyu5OlHANDti7mQS5KPteSuiJwz_R2bBRwqi4V53_wj">
+</div>
+<span class="text-[10px] uppercase font-bold text-stone-500">Yoga</span>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-2 bg-stone-800">
+<img alt="Gym" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="modern gym with heavy weights and dumbbells in soft focus foreground and high-contrast fitness lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBagTZm4i4iCf7rEl_7L6CcHKzPMKeRlhEs8G2RGnors1VSOdQ1RrgTdd1RTk3NyFdqzSqtJoOmy4Nu4e9WNP5hSniLCVtPD5w0JcsQO8RzXQW-MYiCAi-di8FV2z3bYfuESRwWU-j8gxxUvyqxNzVy3BOXI3UUBzn-QD-PPlZPGYJMubVYKDoQWqjy-XCxQ_96r3s3yFohPJYxhx36Z_dVSh9IUxHR8IXc4ZtmYBgZbonTn-JedCxi1zWiEw5sDUhX4szt0OZwWYSF">
+</div>
+<span class="text-[10px] uppercase font-bold text-stone-500">Weightlifting</span>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-2 bg-stone-800">
+<img alt="Cycling" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="professional carbon fiber mountain bike standing on a forest trail with dappled sunlight through trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPVx310aZkAWvdIcMf9wto3h7MDXXBuNfLYTC0hBu5zQ_RdcxlV646ykqAUY4H7HLx_H8HanB9v_w3wTjxWH8o7zmPVHci2MmgXMwiqXfj02E-WFqW97iw_FlG8W5ZFA4jBdWGZzDPPCyY_8ON43-z9cXtKeJQuHM9EaCUAtpDqPevC_xS-PvnMtqXLbE_p_moLlKLVN5hEVuEZ5UllJJTOWQ6_D3LaLyUBAehTqFIqXMrdZykG4HUW5ZEEV4kXOnTTlaID2XPeKlX">
+</div>
+<span class="text-[10px] uppercase font-bold text-stone-500">Cycling</span>
+</div>
+</div>
+</div>
+<button class="w-fit mt-8 border border-stone-700 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all">Go Pro</button>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="mt-32 pt-16 border-t border-stone-200">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-2">
+<h3 class="text-2xl font-bold font-headline mb-4">NDU Mart</h3>
+<p class="text-stone-500 max-w-sm mb-6">Your destination for refined shopping. We select every product with an eye for quality and a heart for design.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">share</span></div>
+<div class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">mail</span></div>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-stone-400">Help</h4>
+<ul class="space-y-2 text-sm text-stone-600">
+<li><a class="hover:text-primary" href="#">Track Order</a></li>
+<li><a class="hover:text-primary" href="#">Returns &amp; Refunds</a></li>
+<li><a class="hover:text-primary" href="#">Shipping Info</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-stone-400">Company</h4>
+<ul class="space-y-2 text-sm text-stone-600">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="pb-12 text-center text-xs text-stone-400">
+                © 2024 NDU Mart. All Rights Reserved.
+            </div>
+</footer>
+</main>
+<!-- Floating Quick Filter (UX Enhancement) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/80 backdrop-blur-xl border border-stone-200/50 p-2 rounded-full shadow-2xl z-50">
+<button class="bg-primary text-white px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">grid_view</span> All Categories
+        </button>
+<button class="text-stone-600 px-4 py-2 rounded-full text-xs font-bold hover:bg-stone-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+        </button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.loadProductsByCategory) {
+            window.loadProductsByCategory('electronics-grid', ['Electronics']);
+            window.loadProductsByCategory('fashion-grid', ['Fashion']);
+            window.loadProductsByCategory('beauty-grid', ['Beauty & Health']);
+        }
+    });
+</script>
+<script src="core.js"></script>
+
+</body></html>

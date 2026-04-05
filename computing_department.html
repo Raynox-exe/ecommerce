@@ -1,0 +1,250 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-semibold text-accent border border-accent rounded-lg hover:bg-accent hover:text-white transition-all duration-300">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+<div class="flex max-w-screen-2xl mx-auto">
+<!-- SideNavBar (Category Sidebar) -->
+<aside class="hidden lg:flex flex-col gap-2 py-8 h-[calc(100vh-80px)] w-72 sticky left-0 top-20 bg-white/80 backdrop-blur-xl border-r border-zinc-200/20">
+<div class="px-6 mb-6">
+<h2 class="text-lg font-bold text-[#2d2f2f] font-headline">Departments</h2>
+<p class="text-xs text-on-surface-variant">Explore the Collection</p>
+</div>
+<nav class="flex flex-col h-full overflow-y-auto pb-4">
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors" href="fashion_department.html">
+            <span class="material-symbols-outlined">apparel</span>
+            <span class="font-inter text-sm">Fashion</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-[#ff7937]/10 text-[#9e3c00] font-semibold border-r-4 border-[#9e3c00]" href="computing_department.html">
+            <span class="material-symbols-outlined">laptop_mac</span>
+            <span class="font-inter text-sm">Computing</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-[#2d2f2f] hover:bg-zinc-100 transition-colors" href="gaming_department.html">
+            <span class="material-symbols-outlined">sports_esports</span>
+            <span class="font-inter text-sm">Gaming</span>
+        </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 px-6 md:px-12 py-10">
+<!-- New Arrivals Banner -->
+<section class="mb-16 relative overflow-hidden rounded-2xl h-[400px] flex items-center bg-zinc-900 group">
+<img alt="Computing" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+<div class="relative z-10 p-12 max-w-2xl">
+<span class="text-primary-fixed bg-on-primary-fixed-variant/50 backdrop-blur-md px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block">Workstation Grade</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white leading-tight mb-6 tracking-tighter">High-Performance Computing</h1>
+<p class="text-zinc-200 text-lg mb-8 max-w-md font-light leading-relaxed">Experience ultimate throughput with our hand-selected workstations, premium ultrabooks, and high-fidelity PC components.</p>
+</div>
+</section>
+<!-- Product Grid -->
+<h2 class="text-2xl font-bold mb-8 font-headline">Available in Computing</h2>
+<section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <!-- Products injected via JS -->
+</section>
+</main>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.loadProductsByCategory) {
+            window.loadProductsByCategory('product-grid', ['Computing']);
+        }
+    });
+</script>
+<!-- Load More -->
+<div class="flex justify-center mt-16">
+<button class="flex items-center gap-2 text-primary font-bold border-2 border-primary px-8 py-3 rounded-full hover:bg-primary hover:text-white transition-all">
+                    Show More Styles
+                    <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-[#f0f1f1] border-t border-zinc-200 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-black text-zinc-800">Curated Retail</div>
+<p class="text-xs text-zinc-500 max-w-xs font-inter">Elevating your everyday essentials through meticulous curation and editorial design. We believe in high-trust velocity shopping.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer">alternate_email</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer">chat_bubble</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-sm text-zinc-800">Shop</h4>
+<div class="flex flex-col gap-2">
+<a class="text-zinc-600 text-xs hover:text-[#9e3c00] transition-colors" href="#">About Us</a>
+<a class="text-zinc-600 text-xs hover:text-[#9e3c00] transition-colors" href="#">Shipping Policy</a>
+<a class="text-zinc-600 text-xs hover:text-[#9e3c00] transition-colors" href="#">Returns</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-sm text-zinc-800">Support</h4>
+<div class="flex flex-col gap-2">
+<a class="text-zinc-600 text-xs hover:text-[#9e3c00] transition-colors" href="#">Contact</a>
+<a class="text-zinc-600 text-xs hover:text-[#9e3c00] transition-colors" href="#">Terms of Service</a>
+<a class="text-zinc-600 text-xs hover:text-[#9e3c00] transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-sm text-zinc-800">Newsletter</h4>
+<p class="text-xs text-zinc-500 mb-2">Get early access to drops and exclusive offers.</p>
+<div class="flex gap-2">
+<input class="bg-white border-none rounded-sm px-4 py-2 text-xs w-full focus:ring-1 focus:ring-primary" placeholder="Email Address" type="email">
+<button class="bg-[#9e3c00] text-white px-4 py-2 rounded-sm text-xs font-bold whitespace-nowrap">Join</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-6 border-t border-zinc-200/50 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-zinc-500">© 2024 Curated Retail Experience. All rights reserved.</p>
+<div class="flex gap-6">
+<img alt="Visa" class="h-4 opacity-40 hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV8MRBe6w2sXMA79Ge9PjU0Lrs5le1sHg-sIQ-VjimV2uQefYnLoRtKLQkuqD8H-2r5n4QUZHpxcGBNvA9_sXZTZUnrg86wMMVN1j0hefM87Ap_Pou9UG6BNMHRmtrOFqP7u2b54CobLjgII2vevz2h5EvYGtx_jngcdVgm8BJMEYbVfYAgDmwkyD4ydkAmAU9kP22tRC_UlW8mGC_q8EcMMh9xFdYtS4jn8-HrWk03eAxduYpnxglD06rmYaQeIg0lQtEX-RRDXa5">
+<img alt="Mastercard" class="h-4 opacity-40 hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb39Wqpp_84WhxTg90AIhbO4KvjD7gcCvcFUPa07fQa6qXlRgGM4bOK72GqjnJa6bJVqERELzMlWdzH1YOzWpGeNJ7-K6BPZNz7o-tHguIxUZdtPa9xqDYofjjUiRrxMPq8UiX2_EXvppOGfRtkNNf3Uaz8OWjSmKOXc73Fufj4pRrbjLcjOOBfOur9YrmaA4WkiUu7zT1w3QnN-GkcDSSSyJQQ0P8AB-62f51z5d_-9hAqFktzSH7KgDYIGdutOw47hc9dLes4L3K">
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Nav -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-zinc-200/50 flex justify-around py-3 z-50">
+<button class="flex flex-col items-center gap-1 text-[#9e3c00]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px]">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px]">Cart</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">Profile</span>
+</button>
+</div>
+
+<script src="core.js"></script>
+
+
+
+
+<script>
+function filterContent(category) {
+    const products = document.querySelectorAll('[data-category]');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    buttons.forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface');
+    });
+    
+    const activeBtn = document.getElementById('btn-' + category);
+    if(activeBtn) {
+        activeBtn.classList.remove('bg-surface-container-high', 'text-on-surface');
+        activeBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+    }
+
+    products.forEach(product => {
+        if (category === 'all') {
+            product.style.display = 'block';
+        } else {
+            product.style.display = (product.getAttribute('data-category') === category) ? 'block' : 'none';
+        }
+    });
+}
+window.onload = () => filterContent('all');
+</script>
+</body></html>

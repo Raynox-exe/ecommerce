@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDU Mart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        :root {
+            --primary: #1A1A1A;
+            --accent: #F96302;
+            --surface: #ffffff;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--surface); }
+        .font-headline { font-family: 'Plus+Jakarta+Sans', sans-serif; }
+        .editorial-gradient { background: linear-gradient(135deg, #F96302 0%, #ff8c42 100%); }
+        .text-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.3); color: transparent; }
+        .input-premium { background: #f9fafb; border: 1px solid #e5e7eb; transition: all 0.3s ease; }
+        .input-premium:focus { background: #ffffff; border-color: #F96302; box-shadow: 0 0 0 4px rgba(249, 99, 2, 0.1); outline: none; }
+    </style>
+    <script src="core.js"></script>
+</head>
+<body class="h-screen overflow-hidden">
+    <div class="flex h-full">
+        <!-- Left Side: Immersive Brand Side -->
+        <div class="hidden lg:flex w-1/2 relative overflow-hidden bg-[#111] items-center px-16">
+            <!-- Background Image (Different one for Signup) -->
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC05lclmjFWgFQWVYzc74bwqsZmyx5zAaiC9Pn8JOM5yWd7yTAt62i1MxCP9EhMyGSp5mNUtcEzCZS9PByIh-IcftVbHn8HnvG7Ki7aG5aB_oMP1P9fI5koFK0WrnRkDdH4CZEb2U7FYVctAsrTI6GLz4T4Y_yNzhzjNqJWm2XYPmA8-mAnx807Ds62L89BGpwlMC8x9SzELj9BgcTixE1seqvwTJAPD-UIkCgFWSjK3iJWwGkMLGvmPLCoJCWTasEBCaudEUhgpdBh" 
+                 alt="Premium Brand" 
+                 class="absolute inset-0 w-full h-full object-cover opacity-60">
+            
+            <div class="relative z-10 space-y-6">
+                <a href="index.html" class="flex items-center gap-3 mb-12">
+                   <div class="w-12 h-12 editorial-gradient rounded-xl flex items-center justify-center text-white shadow-lg">
+                       <span class="material-symbols-outlined text-3xl">local_mall</span>
+                   </div>
+                   <span class="text-white font-headline font-extrabold text-2xl tracking-tighter">NDU <span style="color: #F96302;">Mart</span></span>
+                </a>
+                <h1 class="text-6xl font-headline font-extrabold text-white leading-[1.1] tracking-tighter cursor-default">
+                    Join the <br>
+                    <span class="text-outline">Premium Shopping</span> <br>
+                    Community.
+                </h1>
+                <p class="text-neutral-400 text-lg max-w-md font-medium leading-relaxed">
+                    Begin your journey today. Create an account to gain priority access to deals, manage your wishlist, and track your orders.
+                </p>
+            </div>
+            
+            <!-- Bottom Indicator -->
+            <div class="absolute bottom-12 left-16 flex items-center gap-4 text-white/40 text-xs font-bold tracking-[0.3em] uppercase">
+                <span class="w-12 h-[1px] bg-white/20"></span>
+                ESTABLISHED 2024
+            </div>
+        </div>
+
+        <!-- Right Side: Interaction Side -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-8 md:p-16 relative bg-neutral-50 h-[100dvh] lg:h-full overflow-y-auto">
+            <div class="w-full max-w-md bg-white p-8 sm:p-12 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_20px_50px_rgba(249,99,2,0.05)] border border-neutral-100 space-y-6 sm:space-y-8 animate-fade-in relative z-10 my-auto py-8 sm:py-12">
+                <!-- Mobile Logo -->
+                <a href="index.html" class="lg:hidden flex items-center justify-center gap-3 mb-2">
+                    <div class="w-10 h-10 editorial-gradient rounded-lg flex items-center justify-center text-white shadow-md">
+                        <span class="material-symbols-outlined text-2xl">local_mall</span>
+                    </div>
+                    <span class="text-neutral-900 font-headline font-extrabold text-2xl tracking-tighter">NDU <span style="color: #F96302;">Mart</span></span>
+                </a>
+
+                <div class="text-center lg:text-left space-y-2">
+                    <h2 class="text-3xl sm:text-4xl font-headline font-extrabold text-neutral-900 tracking-tight">Create Account</h2>
+                    <p class="text-neutral-500 font-medium">Please enter your details to sign up.</p>
+                </div>
+
+                <form id="signupForm" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group">
+                            <label class="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2 px-1">First Name</label>
+                            <input type="text" id="firstname" placeholder="John" 
+                                   class="w-full input-premium px-4 py-3.5 rounded-xl placeholder:text-neutral-400">
+                        </div>
+                        <div class="group">
+                            <label class="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2 px-1">Last Name</label>
+                            <input type="text" id="lastname" placeholder="Doe" 
+                                   class="w-full input-premium px-4 py-3.5 rounded-xl placeholder:text-neutral-400">
+                        </div>
+                    </div>
+                    
+                    <div class="group">
+                        <label class="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2 px-1">Email Address</label>
+                        <input type="email" id="email" placeholder="user@example.com" 
+                               class="w-full input-premium px-4 py-3.5 rounded-xl placeholder:text-neutral-400">
+                    </div>
+                    
+                    <div class="group">
+                        <label class="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2 px-1">Create Password</label>
+                        <input type="password" id="password" placeholder="••••••••" 
+                               class="w-full input-premium px-4 py-3.5 rounded-xl placeholder:text-neutral-400">
+                        <p class="text-xs text-neutral-400 font-medium mt-2 px-1">Must be at least 8 characters with one special symbol.</p>
+                    </div>
+                    
+                    <div class="flex items-start gap-3 py-4">
+                        <input type="checkbox" id="terms" class="mt-1 w-4 h-4 rounded accent-[#F96302] border-neutral-300 cursor-pointer">
+                        <label for="terms" class="text-xs text-neutral-500 font-medium leading-relaxed cursor-pointer">
+                            By joining, I agree to the <a href="#" class="font-bold text-neutral-900 underline underline-offset-2">Terms of Service</a> and <a href="#" class="font-bold text-neutral-900 underline underline-offset-2">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full editorial-gradient text-white py-4 rounded-xl font-bold text-lg shadow-xl shadow-[#F96302]/30 hover:shadow-[#F96302]/50 transition-all transform hover:-translate-y-0.5 active:scale-95">
+                        Create My Account
+                    </button>
+                </form>
+
+                <p class="text-center text-sm text-neutral-500 font-medium mt-4">
+                    Already a member? <a href="login.html" class="font-bold text-[#F96302] hover:underline underline-offset-4">Sign In Here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[2rem] p-8 max-w-sm w-full text-center shadow-2xl animate-in zoom-in duration-300">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="material-symbols-outlined text-4xl font-bold">check_circle</span>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Account Created!</h2>
+            <p class="text-gray-500 mb-8">Welcome to NDU Mart. Your account is ready, you can now start shopping.</p>
+            <button onclick="goToLogin()" class="w-full editorial-gradient text-white py-4 rounded-xl font-bold hover:shadow-[#F96302]/50 transition-all shadow-xl shadow-[#F96302]/30">
+                Sign In Now
+            </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
+            
+            // Loading State
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Creating Account...
+                </div>
+            `;
+
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const username = `${firstname} ${lastname}`.trim();
+
+            try {
+                const response = await fetch(`${window.API_BASE}/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password })
+                });
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Show Success Modal
+                    document.getElementById('successModal').classList.remove('hidden');
+                    document.getElementById('successModal').classList.add('flex');
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                    showSignupError(data.error || data.message || 'Registration failed. Please try again.');
+                }
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+                console.error("Fetch Error:", err);
+                showSignupError('Could not reach the server. Please ensure the backend is running.');
+            }
+        });
+
+        function showSignupError(message) {
+            let errEl = document.getElementById('signup-error-msg');
+            if (!errEl) {
+                errEl = document.createElement('div');
+                errEl.id = 'signup-error-msg';
+                errEl.className = 'flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700 mt-2';
+                const form = document.getElementById('signupForm');
+                form.parentNode.insertBefore(errEl, form.nextSibling);
+            }
+            errEl.innerHTML = `
+                <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>${message}</span>
+            `;
+            errEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function goToLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NDU Mart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#F96302',
+            primary: '#1A1A1A',
+            secondary: '#F4F4F4',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #F96302;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+
+<!-- BEGIN: Header -->
+<header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+<div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<svg class="h-6 v-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight uppercase">NDU <span class="text-accent">Mart</span></a>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-auto md:flex-1 max-w-2xl order-3 md:order-2 mt-2 md:mt-0">
+<form class="relative group">
+<input class="w-full pl-4 pr-32 py-2.5 rounded-lg border-gray-200 focus:ring-accent focus:border-accent transition-all" placeholder="Search for products, brands and categories..." type="text">
+<div class="absolute right-1 top-1 flex items-center">
+<select class="hidden lg:block text-xs border-0 border-l border-gray-200 focus:ring-0 py-1.5 mr-1 bg-transparent">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+</select>
+<button class="bg-accent text-white px-5 py-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Icons -->
+    <div class="flex items-center gap-3 sm:gap-6 order-2 md:order-3 ml-auto md:ml-0">
+        <!-- Cart Icon -->
+        <a href="shopping_cart_v2.html" class="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors relative group">
+            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-accent/10 transition-all">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white min-w-[20px] text-center">0</span>
+        </a>
+
+        <!-- Dynamic Auth Buttons -->
+        <div id="auth-buttons" class="flex items-center gap-2 sm:gap-4">
+            <a href="login.html" class="px-4 py-2 sm:px-5 sm:py-2 text-sm font-semibold text-accent border border-accent rounded-lg hover:bg-accent hover:text-white transition-all duration-300">
+                Login
+            </a>
+            <a href="signup.html" class="px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-bold text-white bg-accent rounded-lg hover:bg-[#9e3c00] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Secondary Nav Bar -->
+<nav class="border-t border-gray-100 hidden md:block">
+<div class="container mx-auto px-4 flex items-center justify-start gap-10 h-10 text-[11px] font-bold uppercase tracking-wider">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="shop_by_category.html">Categories</a>
+<a class="hover:text-accent transition-colors" href="computing_department.html">Computing</a>
+<a class="hover:text-accent transition-colors" href="fashion_department.html">Fashion</a>
+<a class="hover:text-accent transition-colors" href="gaming_department.html">Gaming</a>
+</div>
+</nav>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content Container -->
+<main class="container mx-auto px-4 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- BEGIN: Sidebar Filters -->
+<aside class="hidden lg:flex flex-col gap-2 py-8 min-h-screen w-72 bg-white border-r border-gray-100">
+<div class="px-6 mb-6">
+<h2 class="text-lg font-bold text-gray-900">Categories</h2>
+<p class="text-xs text-gray-500">Explore the Collection</p>
+</div>
+<nav class="flex flex-col h-full overflow-y-auto pb-4">
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="shop_by_category.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">verified</span>
+            <span class="text-sm font-medium">Official Store</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="home_garden_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">kitchen</span>
+            <span class="text-sm font-medium">Appliances</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-accent/5 text-accent font-bold border-r-4 border-accent" href="computing_department.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+            <span class="text-sm">Phones & Tablets</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="beauty_health_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">health_and_safety</span>
+            <span class="text-sm font-medium">Health & Beauty</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="home_garden_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">home</span>
+            <span class="text-sm font-medium">Home & Office</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-accent/5 text-accent font-bold border-r-4 border-accent" href="computing_department.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">tv</span>
+            <span class="text-sm">Electronics</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="fashion_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">apparel</span>
+            <span class="text-sm font-medium">Fashion</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">shopping_basket</span>
+            <span class="text-sm font-medium">Supermarket</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 bg-accent/5 text-accent font-bold border-r-4 border-accent" href="computing_department.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+            <span class="text-sm">Computing</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="baby_products_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">child_care</span>
+            <span class="text-sm font-medium">Baby Products</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="gaming_department.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">sports_esports</span>
+            <span class="text-sm font-medium">Gaming</span>
+        </a>
+        <a class="flex items-center gap-4 px-6 py-3 text-gray-700 hover:bg-accent/5 hover:text-accent transition-all group" href="all_categories_50_items.html">
+            <span class="material-symbols-outlined text-gray-400 group-hover:text-accent transition-colors">more_horiz</span>
+            <span class="text-sm font-medium">Other categories</span>
+        </a></nav>
+</aside>
+<!-- END: Sidebar Filters -->
+<!-- BEGIN: Product Listing Area -->
+<section class="flex-1">
+<!-- Top Bar for Sorting/Count -->
+<div class="bg-white p-4 rounded-lg border border-nexus-border mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="text-sm text-slate-600">
+            Showing <span class="font-bold">1-12</span> of 55 products
+          </div>
+<div class="flex items-center space-x-4">
+<label class="text-sm text-slate-500" for="sort">Sort by:</label>
+<select class="text-sm border-nexus-border rounded-md focus:ring-nexus-accent focus:border-nexus-accent py-1 pr-10" id="sort">
+<option>Newest First</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Most Popular</option>
+</select>
+<div class="flex border rounded-md overflow-hidden">
+<button class="px-3 py-1 bg-slate-100 border-r border-nexus-border text-slate-600"><i class="fas fa-th-large"></i></button>
+<button class="px-3 py-1 bg-white text-slate-400"><i class="fas fa-list"></i></button>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="product-grid" data-purpose="product-list">
+<!-- Product Card 1 (New Badge) -->
+<article class="bg-white border border-nexus-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+<div class="relative aspect-square bg-slate-100">
+<img alt="Wireless Headphones" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrek8L2sPyymRIn7Lq6iNo8fYjFWpoqz4yl1itzHoL78bvF22YSMIaK9oQVdAXQ3LC3hLkq1jXXoaYiR-kv_ijkEvrCQjXEUWQbkAxTzGXQPcpX_AcHnfKlSBTX1IS5OFzEZDb7CEXfJYV2H0BwKSl3DoUKdthU3ZDam8rpE_LFW8yc7f7q3K7xXqL0I2p9Xw0gLkz-IuYmIytvfAPo5CXXupHyANTzudQrcbKhqkDCAHc1pn6Tiy3cVEjzoHio7y7n5qqOHaFzHcI">
+<span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold uppercase px-2 py-1 rounded">New</span>
+<button class="absolute top-3 right-3 bg-white/80 p-2 rounded-full text-slate-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
+<i class="far fa-heart"></i>
+</button>
+</div>
+<div class="p-4">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Electronics</span>
+<h4 class="font-bold text-nexus-primary mt-1 truncate">Pro Wireless Headphones</h4>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 text-xs mr-2">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+</div>
+<span class="text-[10px] text-slate-400">(128)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-xl font-bold text-nexus-accent">$89.99</span>
+<button class="bg-nexus-primary hover:bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-md transition-colors flex items-center">
+<i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 (Low Stock Badge) -->
+<article class="bg-white border border-nexus-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+<div class="relative aspect-square bg-slate-100">
+<img alt="Smart Watch" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Hew26d2ZscVgZRRvQnKjc-OhCwMnHw4Cx8M1lp-mVa-BbmaTStmT3kjawoaMaRZvJ6UXPF1Xapn2CyU-6ukhrfd-vM3PRHem2qmf6B00UWXyPOsTGxEzgv_S6YdyMt4-LqoOziExLmsoi2YyhyWSsm4OEwYxRBvytv0VabwwGsnkDr8QJke49vj5BDlrO_0ImlXfogwnwAMBuFY42Yrk_MQyR8kv4ANHbdLPq3TKPYLbDz2hLpT9VzkouQm7Hg7u4tEWcfwkKQB4">
+<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold uppercase px-2 py-1 rounded">Low Stock</span>
+</div>
+<div class="p-4">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Tech</span>
+<h4 class="font-bold text-nexus-primary mt-1 truncate">Nexus Smart Watch V2</h4>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 text-xs mr-2">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<span class="text-[10px] text-slate-400">(96)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-xl font-bold text-nexus-accent">$129.00</span>
+<button class="bg-nexus-primary hover:bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-md transition-colors flex items-center">
+<i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-white border border-nexus-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+<div class="relative aspect-square bg-slate-100">
+<img alt="Casual Backpack" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhJM0CBRFyarEZECAabnl13e9IveG0P26_-huaK-ltZNmKszxvLCbev9ZcKF1oiYNTs0sIW5fxADgH8pJ5zcO3QPN1wZIYEM9f7hyE9Nfde0UqG-4yqJY5gZe1vKfkhL93pezihBIVaICV5muZFDCiGMtDe1X5Hc13COAhJbGtP4sMV8-fw5jhpS27cez9q2FRV5LFdUpfURlkqiZuKWKAP4ruNH3HzFvfpRIEhtObwE5ijITZo2XTElSSucoKVexOvWyzo8HnHrfR">
+</div>
+<div class="p-4">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Fashion</span>
+<h4 class="font-bold text-nexus-primary mt-1 truncate">Urban Explorer Backpack</h4>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 text-xs mr-2">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+</div>
+<span class="text-[10px] text-slate-400">(210)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-xl font-bold text-nexus-accent">$45.50</span>
+<button class="bg-nexus-primary hover:bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-md transition-colors flex items-center">
+<i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-white border border-nexus-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+<div class="relative aspect-square bg-slate-100">
+<img alt="Bluetooth Speaker" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWaX8aOdZkb1Dwb--LXrgBeQML9sQv8OsTqJy8PnVQMtdxqEgmUvefVGKf8cgWQgkJJVcJQILQCbQ11W3je6NXMBk4OyiLyS65Eopcaz-mK4GAPGmdRyQEkjoXCmxB4RXhRawx_kyK42NG-x_1s3eBTDeWFaf7Qjk0DQ5fxAXX4jLNkKcHKlkNjNUjCTIdRwmMov1yI4nvpQ1H3EzE9vuVJgmngR4P6ebK7rANZoowIOUUwyHlUeKauP2XzMLmiU_4pRCSSzLzApoZ">
+<span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold uppercase px-2 py-1 rounded">New</span>
+</div>
+<div class="p-4">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Electronics</span>
+<h4 class="font-bold text-nexus-primary mt-1 truncate">Lumina Mini Speaker</h4>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 text-xs mr-2">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+</div>
+<span class="text-[10px] text-slate-400">(45)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-xl font-bold text-nexus-accent">$29.99</span>
+<button class="bg-nexus-primary hover:bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-md transition-colors flex items-center">
+<i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="bg-white border border-nexus-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+<div class="relative aspect-square bg-slate-100">
+<img alt="Leather Wallet" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqT7hSQ7VUyMlzBAxlddrldjRTN-5P2USmhEnuLgTpLgVn_farJRoO_rveIGBnips9j9y4f4xfuW8yQxbm0eC6GigDPAHo1pcgJPvJ9YSrXtmNzJWrcj9sGA9_4g3NK7wH_H6SJfs0ZtakyTY1E1z_jQk-mWE4yF7irN4h9mt2fHUqMtYx_96vtD3ektPxBVrzYbLBvSwXCqy_PBL4AuRwJ6TdVbVdKEHZnFdAurQJvvgWqO4NGPA8i_LSnj_MxE09Q6upE4-rRlEy">
+<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold uppercase px-2 py-1 rounded">Low Stock</span>
+</div>
+<div class="p-4">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Accessories</span>
+<h4 class="font-bold text-nexus-primary mt-1 truncate">Handcrafted Leather Wallet</h4>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 text-xs mr-2">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<span class="text-[10px] text-slate-400">(82)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">$45.00</span>
+<span class="text-xl font-bold text-nexus-accent">$34.99</span>
+</div>
+<button class="bg-nexus-primary hover:bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-md transition-colors flex items-center">
+<i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 6 -->
+<article class="bg-white border border-nexus-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+<div class="relative aspect-square bg-slate-100">
+<img alt="Sports Bottle" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgskf7CM5AvoF9_9VQXLpokh_mSbT6TvnzWASBTAu9PaLwPziofZx0cVCYzhVr0tfuqqyCCrvqbhuls2-ze_1xYtDO9DrLWbOYuwAss5QzDxPrhaI8MAMV8xt2y1XTY9uYIgUUuEk0PKadm3CUOd6AODiHFnTd4RKRlhwRDXZGLq8Jee4dy1GAtUlJVWKOsTRlcq6htPhLPbnSv8nJdG57i2xQ5Az3bFTH45yZ8kW8bwZIQ3S4PfaC8WBwQ9hgHahMb7JZMRQYmUlH">
+</div>
+<div class="p-4">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Sports</span>
+<h4 class="font-bold text-nexus-primary mt-1 truncate">Insulated Water Bottle 1L</h4>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 text-xs mr-2">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+</div>
+<span class="text-[10px] text-slate-400">(512)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-xl font-bold text-nexus-accent">$24.00</span>
+<button class="bg-nexus-primary hover:bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-md transition-colors flex items-center">
+<i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<nav class="mt-12 flex justify-center items-center space-x-2" data-purpose="pagination">
+<button class="w-10 h-10 flex items-center justify-center border border-nexus-border rounded-lg bg-white text-slate-400 hover:text-nexus-accent hover:border-nexus-accent transition-colors">
+<i class="fas fa-chevron-left"></i>
+</button>
+<button class="w-10 h-10 flex items-center justify-center border border-nexus-accent rounded-lg bg-nexus-accent text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-nexus-border rounded-lg bg-white text-slate-600 hover:text-nexus-accent hover:border-nexus-accent transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-nexus-border rounded-lg bg-white text-slate-600 hover:text-nexus-accent hover:border-nexus-accent transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-10 h-10 flex items-center justify-center border border-nexus-border rounded-lg bg-white text-slate-600 hover:text-nexus-accent hover:border-nexus-accent transition-colors">8</button>
+<button class="w-10 h-10 flex items-center justify-center border border-nexus-border rounded-lg bg-white text-slate-400 hover:text-nexus-accent hover:border-nexus-accent transition-colors">
+<i class="fas fa-chevron-right"></i>
+</button>
+</nav>
+</section>
+<!-- END: Product Listing Area -->
+</div>
+</main>
+<!-- END: Main Content Container -->
+<!-- BEGIN: Footer -->
+<footer class="bg-primary text-gray-300 py-12 mt-16">
+<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1">
+<div class="text-2xl font-bold text-white mb-6 uppercase tracking-tight">NDU <span class="text-accent">Mart</span></div>
+<p class="text-sm leading-relaxed">Your one-stop destination for the latest in technology, fashion, and lifestyle. Premium quality at competitive prices.</p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3 text-sm">
+<li><a class="hover:text-accent transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-accent transition-colors" href="all_categories_50_items.html">Shop</a></li>
+<li><a class="hover:text-accent transition-colors" href="deals_department.html">Deals</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Customer Service</h4>
+<ul class="space-y-3 text-sm">
+<li><a class="hover:text-accent transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Returns &amp; Refunds</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Newsletter</h4>
+<p class="text-sm mb-4">Subscribe to get updates on new products and special offers.</p>
+<div class="flex">
+<input class="bg-gray-800 border-none rounded-l-md px-4 py-2 text-sm w-full focus:ring-1 focus:ring-accent" placeholder="Your Email" type="email">
+<button class="bg-accent hover:bg-orange-600 px-4 py-2 rounded-r-md transition-colors">
+<span class="material-symbols-outlined text-white">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="container mx-auto px-4 border-t border-gray-800 mt-12 pt-8 text-center text-xs">
+      © 2026 NDU Mart. All rights reserved.
+    </div>
+</footer>
+<!-- END: Footer -->
+
+<script src="core.js"></script>
+
+</body></html>
