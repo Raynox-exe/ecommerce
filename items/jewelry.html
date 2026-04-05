@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#515155",
+                    "tertiary": "#7c5300",
+                    "outline-variant": "#acadad",
+                    "error": "#b31b25",
+                    "background": "#f6f6f6",
+                    "inverse-on-surface": "#9c9d9d",
+                    "error-container": "#fb5151",
+                    "surface": "#f6f6f6",
+                    "primary-container": "#ff7937",
+                    "secondary-dim": "#4f4f53",
+                    "surface-dim": "#d3d5d5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f6f6f6",
+                    "on-surface": "#2d2f2f",
+                    "primary-fixed": "#ff7937",
+                    "tertiary-fixed-dim": "#eba20d",
+                    "secondary": "#5b5b5f",
+                    "surface-variant": "#dbdddd",
+                    "on-primary-fixed-variant": "#511b00",
+                    "primary-fixed-dim": "#fa6303",
+                    "on-primary-container": "#421400",
+                    "on-tertiary-container": "#513500",
+                    "secondary-fixed": "#e3e2e6",
+                    "surface-tint": "#9e3c00",
+                    "on-secondary-fixed": "#3e3f42",
+                    "on-primary-fixed": "#000000",
+                    "on-background": "#2d2f2f",
+                    "inverse-primary": "#fa6303",
+                    "on-tertiary": "#fff0e0",
+                    "primary-dim": "#8b3400",
+                    "on-primary": "#fff0ea",
+                    "on-secondary-fixed-variant": "#5b5b5f",
+                    "surface-container-low": "#f0f1f1",
+                    "surface-container-high": "#e1e3e3",
+                    "error-dim": "#9f0519",
+                    "tertiary-fixed": "#fbb022",
+                    "on-secondary": "#f3f2f6",
+                    "on-error": "#ffefee",
+                    "secondary-container": "#e3e2e6",
+                    "primary": "#9e3c00",
+                    "inverse-surface": "#0c0f0f",
+                    "secondary-fixed-dim": "#d5d4d8",
+                    "on-tertiary-fixed-variant": "#5c3d00",
+                    "surface-container": "#e7e8e8",
+                    "tertiary-container": "#fbb022",
+                    "on-surface-variant": "#5a5c5c",
+                    "on-error-container": "#570008",
+                    "surface-container-highest": "#dbdddd",
+                    "on-tertiary-fixed": "#352100",
+                    "outline": "#767777",
+                    "tertiary-dim": "#6c4800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-neutral-900 dark:text-white font-headline">CURATED</div>
+<div class="hidden md:flex items-center space-y-0 space-x-8">
+<a class="text-orange-700 dark:text-orange-500 font-bold border-b-2 border-orange-700 font-['Plus_Jakarta_Sans'] font-semibold tracking-tight transition-all duration-300 ease-in-out" href="#">Collections</a>
+<a class="text-neutral-600 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-['Plus_Jakarta_Sans'] font-semibold tracking-tight" href="#">Editorial</a>
+<a class="text-neutral-600 dark:text-neutral-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-['Plus_Jakarta_Sans'] font-semibold tracking-tight" href="#">Designers</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:block relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="Search the vault..." type="text"/>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer text-neutral-600 hover:text-orange-700 transition-colors">account_circle</span>
+<span class="material-symbols-outlined cursor-pointer text-neutral-600 hover:text-orange-700 transition-colors">shopping_bag</span>
+</div>
+</div>
+</div>
+<div class="bg-neutral-100 dark:bg-neutral-800 h-[1px]"></div>
+</nav>
+<div class="flex pt-20">
+<!-- SideNavBar -->
+<aside class="hidden md:flex h-[calc(100vh-80px)] w-72 border-r border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 flex-col p-6 space-y-2 sticky top-20">
+<div class="mb-8">
+<h2 class="text-lg font-bold text-neutral-900 dark:text-white font-headline">Categories</h2>
+<p class="text-xs text-neutral-500 uppercase tracking-widest mt-1">Browse the Edit</p>
+</div>
+<nav class="space-y-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="new_releases">new_releases</span> New Arrivals
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-neutral-800 text-orange-700 dark:text-orange-500 rounded-lg shadow-sm font-semibold font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span> Designer Collections
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="checkroom">checkroom</span> Ready-to-Wear
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Accessories
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="steps">steps</span> Footwear
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span> Editorial Picks
+                </a>
+</nav>
+<div class="pt-6 border-t border-neutral-200 dark:border-neutral-800">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-bold text-sm shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                    Shop Sale
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 px-8 py-12 md:px-16 overflow-x-hidden">
+<!-- Hero Header -->
+<header class="mb-20 max-w-5xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="space-y-4">
+<span class="text-primary font-bold tracking-[0.3em] uppercase text-xs">Exquisite Craftsmanship</span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface leading-[0.9]">Fine<br/><span class="text-outline-variant italic font-light">Jewelry</span></h1>
+</div>
+<div class="max-w-xs pb-4">
+<p class="text-on-surface-variant leading-relaxed font-light italic">
+                            "A curated selection of the world's most rare gemstones and avant-garde designs, tailored for the modern connoisseur."
+                        </p>
+</div>
+</div>
+</header>
+<!-- Featured Asymmetric Bento Grid -->
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-full md:h-[700px]">
+<!-- Large Feature -->
+<div class="md:col-span-7 relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110" data-alt="Close up of a luxury diamond necklace draped over a velvet bust with soft dramatic side lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKSOGS-5FhASYhmi25mVaI-Y6faeHSlZmi6wc9Wnt7r3rrsjsCoxu_apuMxTntfPeJzADgbMq-FiZguQ0GbMnpDKva7hDTnBV6brxokIhB45F2VfO3oJxPJOIX4POltUMPzWhqywVlz7cFkMrWKB_zU1eTdTJm3Ut9PULdlFnAHiOJRXzj_xhSTgFObiKAqRxDD2Jn_h4nwCy9NZBDGFWG-tdYsjqfkes_esJDagEFE-FylShnkdhBZLOz09RxSkAvYiM2Wl5Jyjwe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="text-[10px] uppercase tracking-widest font-bold opacity-80">Limited Edition</span>
+<h3 class="text-3xl font-headline font-bold mt-2">The Celestial Collar</h3>
+<button class="mt-4 px-6 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-xs font-bold hover:bg-white hover:text-primary transition-colors">View Details</button>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-rows-2 gap-6">
+<!-- Top Small Feature -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxury gold earrings with emerald accents on a white marble surface reflecting soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB6xDw0onpf-473heGPjlX4aydYwq7kqLyH7r4V2F2OKsBVX9tp8BpMvVGWgmKQennfLas9vEGUdXFfFTWRsvDedDfxHV3TarBkWNWTs_v7JHCZkpzBZwWKtTjiB9vQqUVa9OB8RE3q_GRtUDOQdkDq8SzGMon5Ki1WtHX1Kl6WMJXfBBUvB-x_iTDNKjFrnEiLDI7srO79GkBaCihcWi6O8LEsD-pgdNDX03oCq9hx2GG_nmXsxvQGYYuqZfofjpIwqf9TA4XoBmO"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+<div class="absolute top-6 right-6">
+<span class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full">NEW</span>
+</div>
+<div class="absolute bottom-6 left-6 text-white drop-shadow-md">
+<h4 class="text-xl font-headline font-bold">Verdant Drops</h4>
+</div>
+</div>
+<!-- Bottom Small Feature -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist luxury wristwatch with silver casing and leather strap on a dark architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRL22xNSpMt-mKOu78Cr5XVAlvfUmuBfPs9aFtL29Ux1haEtlLabjMSAP4Eedmb-64JB6rhdP7BqtOorqRU_FEZj-8rqS6UbTHswRVwbpqOIAv6_zr6eSHc3P0YQYE05GHR1r9_kU7IOk1zqhHDiRWPo-sqWtuIdNqURiwALQNA0PLuYTPySw2Zs9EF7Rrw7Y4fsALpTNA0UWSLAmhUsF7XFDNOk09jvVpMRS5Q4xeZ69BDYd4zMkysc8LHOlP_XL6tFJOUAPo7Br"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/20 backdrop-blur-sm">
+<span class="text-white font-bold tracking-widest border-b-2 border-white">EXPLORE WATCHES</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters & Catalog -->
+<section class="mb-20">
+<div class="flex flex-wrap items-center justify-between gap-6 mb-12 border-b border-outline-variant/15 pb-6">
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg text-xs font-bold font-['Inter'] shadow-sm">All Jewelry</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-medium hover:bg-surface-container-highest transition-colors">Necklaces</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-medium hover:bg-surface-container-highest transition-colors">Rings</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-medium hover:bg-surface-container-highest transition-colors">Watches</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant cursor-pointer">
+<span class="text-xs font-semibold uppercase tracking-tighter">Sort by: Relevance</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="High-end pearl necklace with gold clasp lying on neutral linen fabric in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnRWS3Ms4FZHdjUOiwAfnyFfvGeEaAhq7ElyIZSVhCFMwQeXkfJlo4lobAd-UYihvgAEFAhtOspATYLizZ7uHHjziNCUNPbPDIPr-CfibWXatXtO3daDWVvN8KxDmVAcPj5mIc871hUDvo1EGzybPhrUNnNzT4aFB1mtVs92jCf3tTySSi7MgSAA4tceUkAeJhypyoLoBXitaE__K5LRZsUTdOqVa6lrOpq2rwzr0VxvPhc6_BkwLf78D7obt2GVJ7UOAZ9x3Unx62"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
+</button>
+</div>
+<h3 class="text-lg font-headline font-bold text-on-surface">Petite Baroque Pearl</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-sm font-medium text-on-surface-variant">Handcrafted Gold</span>
+<span class="text-sm font-bold text-primary">$1,250</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Diamond encrusted ring sparkling under focused spotlight on a reflective black surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWqflYLsEGtNX5AuY1Rqg_O2AI5i1G_DvdefcfijWMfFhHryPlCXQz9kaN62ebvEf8fHBF2g8hroEnnXzC4y_QcjnVZGJkPhKpRTBpdhu855VJOCl0JSL-2qop07iVpmikZTfxff-79dNpyCuzxlfmGT6caBgbcTyF-0wuGevWy5YB8vEEGdKDijvf83oLS4-qwjOJ7KYTfm_i4o0zint99HPmdGz2gKruK1pUGxZd4O1H0U2ZsUl_23mHEnC3aCXVvgRYMCDPPuqW"/>
+<span class="absolute top-4 left-4 bg-error-container text-on-error-container text-[10px] font-bold px-3 py-1 rounded-full">LOW STOCK</span>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
+</button>
+</div>
+<h3 class="text-lg font-headline font-bold text-on-surface">Solitaire Prism Ring</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-sm font-medium text-on-surface-variant">Platinum / 2.5ct</span>
+<span class="text-sm font-bold text-primary">$8,900</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of a classic silver wristwatch with complex dial face against a professional grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN1ySP39Xa5t3KP7rjJVCagJRDZydyQ-sBOa2YD4DN19fTCWMgsv2lt2I_qCtO--cBNriXc9f5pv35v1RRH9UeCN9yiSvem6WutTya3HuLnID1uFWMlsqGP9XmD0EqhHjO9M_3MVHdwV_fGveZ1J6axksDiDIMiVNC5mgTqFaBPuOVQylhiYItQ4I4xNSpedQTpnatEFp0dhmb6bJzVgXc-AD-nSMLC89PpO8Uwgq6q7RnXoJ5ArI0pGD_6MeMZNhow1-eEFhsJI-C"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
+</button>
+</div>
+<h3 class="text-lg font-headline font-bold text-on-surface">Chronos Titanium</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-sm font-medium text-on-surface-variant">Swiss Movement</span>
+<span class="text-sm font-bold text-primary">$4,400</span>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern geometric gold necklace on a beige clay surface with sculptural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDredLUY6VMmT82mg152ACx-y7J8vzQYROxphk0MLhxmUWH0jrycGpkikhITrrtevZbqex9nb543o2uLs3K5e7FJOCmSDuZavn4Vgeo7RdLLyRr83QNokjVv33N7X4IunBDQf-8m8A7W4DraRAKrrxWO78CnxxzXY7SsqRuW5EC8bviMi9KApifVXQxLnGVRgTbchttg2rEmksfoHhHgfPKsLv75DYo8WsixMaLJ0kJlZFZyvtv_495GAzfO2dsEA07M99BDKEHK3Zr"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
+</button>
+</div>
+<h3 class="text-lg font-headline font-bold text-on-surface">Bauhaus Gold Link</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-sm font-medium text-on-surface-variant">18k Solid Gold</span>
+<span class="text-sm font-bold text-primary">$3,100</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Feature Card -->
+<section class="mb-32">
+<div class="bg-surface-container-low rounded-3xl p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-container"></div>
+<div class="z-10 flex-1">
+<h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight mb-6">Join the Private Collection</h2>
+<p class="text-on-surface-variant text-lg max-w-md font-light mb-8">Gain early access to seasonal drops and exclusive auction items from our world-class curators.</p>
+<div class="flex gap-4 max-w-md">
+<input class="flex-1 bg-surface-container-lowest border-none rounded-full py-4 px-6 text-sm focus:ring-2 focus:ring-primary/40" placeholder="Your email address" type="email"/>
+<button class="bg-inverse-surface text-surface px-8 py-4 rounded-full text-sm font-bold hover:bg-primary transition-colors">Join</button>
+</div>
+</div>
+<div class="flex-1 w-full md:w-auto h-64 md:h-[400px] rounded-2xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Abstract artful arrangement of jewelry pieces on a minimalist geometric pedestal with soft directional light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dr3SPxtbL6tXYY4RQgXPgsZmhpEW8yHXqNQBmJJUwaihZxMGFYmKsDQiNYGThfIdfGldN0a3xixtiVqImn27w3_VQWrcQ-9RI67SgjDhAgCiIV3qpw7P3J3V8ZMmrqdiDEQ1Xd09Yd8ZffE0bP-0sz5UCulsy4YflxtHstI36-LhTBhAo1viLJC-YD_yj51tR4kht6jV5OIs9xlCrewWd-eCj7ql5WzNi1IQglBBKT7RaqQbuHl2hnrMWhAMX9EBB4wJC9qsxHl6"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-neutral-50 dark:bg-neutral-950 w-full py-12 px-8 border-t border-neutral-200 dark:border-neutral-800">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="text-neutral-400 font-['Inter'] text-xs uppercase tracking-[0.2em]">
+                © 2024 CURATED RETAIL. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-8">
+<a class="text-neutral-500 dark:text-neutral-500 hover:text-orange-700 dark:hover:text-orange-500 underline-offset-4 hover:underline transition-all font-['Inter'] text-xs uppercase tracking-widest" href="#">Sustainability</a>
+<a class="text-neutral-500 dark:text-neutral-500 hover:text-orange-700 dark:hover:text-orange-500 underline-offset-4 hover:underline transition-all font-['Inter'] text-xs uppercase tracking-widest" href="#">Shipping</a>
+<a class="text-neutral-500 dark:text-neutral-500 hover:text-orange-700 dark:hover:text-orange-500 underline-offset-4 hover:underline transition-all font-['Inter'] text-xs uppercase tracking-widest" href="#">Returns</a>
+<a class="text-neutral-500 dark:text-neutral-500 hover:text-orange-700 dark:hover:text-orange-500 underline-offset-4 hover:underline transition-all font-['Inter'] text-xs uppercase tracking-widest" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<!-- Floating Action Button - Contextual for browsing category -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 hover:scale-110 transition-transform z-[100]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</button>
+</body></html>

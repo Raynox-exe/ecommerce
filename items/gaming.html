@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#d5d4d8",
+                    "on-surface-variant": "#5a5c5c",
+                    "background": "#f6f6f6",
+                    "on-tertiary-container": "#513500",
+                    "on-background": "#2d2f2f",
+                    "tertiary-container": "#fbb022",
+                    "surface": "#f6f6f6",
+                    "primary-fixed": "#ff7937",
+                    "on-tertiary-fixed-variant": "#5c3d00",
+                    "primary-fixed-dim": "#fa6303",
+                    "tertiary": "#7c5300",
+                    "secondary-container": "#e3e2e6",
+                    "secondary-fixed": "#e3e2e6",
+                    "on-secondary-fixed-variant": "#5b5b5f",
+                    "inverse-primary": "#fa6303",
+                    "on-surface": "#2d2f2f",
+                    "tertiary-fixed": "#fbb022",
+                    "on-secondary-container": "#515155",
+                    "on-primary-fixed-variant": "#511b00",
+                    "outline-variant": "#acadad",
+                    "primary": "#9e3c00",
+                    "surface-tint": "#9e3c00",
+                    "secondary-dim": "#4f4f53",
+                    "error-dim": "#9f0519",
+                    "surface-container-low": "#f0f1f1",
+                    "on-primary-fixed": "#000000",
+                    "primary-container": "#ff7937",
+                    "on-primary": "#fff0ea",
+                    "on-secondary-fixed": "#3e3f42",
+                    "on-error-container": "#570008",
+                    "on-tertiary-fixed": "#352100",
+                    "tertiary-fixed-dim": "#eba20d",
+                    "on-primary-container": "#421400",
+                    "tertiary-dim": "#6c4800",
+                    "surface-dim": "#d3d5d5",
+                    "surface-bright": "#f6f6f6",
+                    "primary-dim": "#8b3400",
+                    "inverse-surface": "#0c0f0f",
+                    "on-tertiary": "#fff0e0",
+                    "surface-container": "#e7e8e8",
+                    "error-container": "#fb5151",
+                    "secondary": "#5b5b5f",
+                    "on-secondary": "#f3f2f6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#dbdddd",
+                    "inverse-on-surface": "#9c9d9d",
+                    "surface-container-high": "#e1e3e3",
+                    "outline": "#767777",
+                    "on-error": "#ffefee",
+                    "error": "#b31b25",
+                    "surface-variant": "#dbdddd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl h-20">
+<div class="flex justify-between items-center px-8 h-full max-w-[1920px] mx-auto relative">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-extrabold tracking-tighter text-zinc-900 dark:text-zinc-50">CURATOR</span>
+<div class="hidden lg:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-medium">
+<a class="text-orange-700 dark:text-orange-500 font-bold border-b-2 border-orange-700 py-1" href="#">Consoles</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-600 transition-colors" href="#">PC Gaming</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-600 transition-colors" href="#">Accessories</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-600 transition-colors" href="#">New Arrivals</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<input class="bg-surface-container-highest border-none rounded-full py-2 pl-12 pr-6 w-64 focus:ring-2 focus:ring-primary/40 transition-all text-sm" placeholder="Search curated gear..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-zinc-50 dark:hover:bg-zinc-900 rounded-full transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-zinc-700 dark:text-zinc-300" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="p-2 hover:bg-zinc-50 dark:hover:bg-zinc-900 rounded-full transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-zinc-700 dark:text-zinc-300" data-icon="person">person</span>
+</button>
+</div>
+</div>
+<div class="bg-zinc-100 dark:bg-zinc-900 h-[1px] w-full absolute bottom-0 left-0"></div>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-8 max-w-[1920px] mx-auto flex gap-8">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col gap-2 p-6 sticky top-24 h-[calc(100vh-6rem)] w-64 rounded-r-2xl bg-zinc-50 dark:bg-zinc-900/50">
+<div class="mb-6">
+<h2 class="font-['Plus_Jakarta_Sans'] font-bold text-xl text-on-background">Gaming</h2>
+<p class="text-xs text-outline font-medium tracking-wide uppercase">High-Performance Gear</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 text-orange-700 dark:text-orange-500 font-bold bg-orange-50/50 dark:bg-orange-950/20 rounded-lg cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="sports_esports" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-tight">PlayStation</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-zinc-500 dark:text-zinc-400 hover:translate-x-1 hover:bg-white dark:hover:bg-zinc-800 rounded-lg cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="videogame_asset">videogame_asset</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-tight">Xbox</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-zinc-500 dark:text-zinc-400 hover:translate-x-1 hover:bg-white dark:hover:bg-zinc-800 rounded-lg cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="joystick">joystick</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-tight">Nintendo</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-zinc-500 dark:text-zinc-400 hover:translate-x-1 hover:bg-white dark:hover:bg-zinc-800 rounded-lg cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-tight">PC Hardware</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-zinc-500 dark:text-zinc-400 hover:translate-x-1 hover:bg-white dark:hover:bg-zinc-800 rounded-lg cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-tight">Streaming Gear</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-zinc-500 dark:text-zinc-400 hover:translate-x-1 hover:bg-white dark:hover:bg-zinc-800 rounded-lg cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm tracking-tight">Retro</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<section class="flex-1 flex flex-col gap-12">
+<!-- Hero Banner -->
+<div class="relative h-[500px] rounded-3xl overflow-hidden group">
+<img alt="Gaming setup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Ultra-modern professional gaming setup featuring a sleek PlayStation 5 console and custom controllers with soft neon ambient lighting and futuristic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA9LvjFW3e59CJHUIoq1hUYnG-j8t7_5Ym6w7MdB7GX6t_qaKUWRDA1e0fE6DZzZHh_OBxdpa7q_ATwnRuwesX0ZX6X_uHYToBSkG6ga5q5qIm-CDxBhPBJ8hHyyRthK9z5lZcx-udIHnYM6KOjuy7kuTZYyAyiN10wsvqEYb56JugZfaESqnAFmlNajQHr0KH9S4p0Jp7DB2lrLrs7YnF-9e7hKYXxhAmKKFkFz1KAL9GnHhbL75LNQKV9g-_mdLwbRIHwhkxZHQd"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center px-16">
+<div class="max-w-xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase mb-6">Exclusive Drops</span>
+<h1 class="text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tighter">Level Up Your Game: <span class="text-primary-container">The Pro Collection</span></h1>
+<p class="text-zinc-300 text-lg mb-8 font-light leading-relaxed">Curated hardware for the elite. Discover the next generation of performance with our hand-selected gaming ecosystem.</p>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                            Shop The Collection
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Featured Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Main Featured: PS5 -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between group cursor-pointer border border-transparent hover:border-primary/10 transition-all">
+<div>
+<div class="flex justify-between items-start">
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Now In Stock</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">favorite</span>
+</div>
+<h3 class="text-2xl font-bold mt-4">PlayStation 5 Console</h3>
+<p class="text-outline text-sm mt-2">The future of play has arrived.</p>
+</div>
+<img alt="PS5" class="w-full h-64 object-contain my-6 transform transition-transform group-hover:scale-110" data-alt="Pristine white PlayStation 5 console standing vertically on a clean surface with dramatic studio lighting and sharp details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhhdAnlN7-PE-swKjkNLRsdrSo9r8aC08W9kbxyLgEq2CDIuUgr7n72pPilg4VE_JzzIuCltOUPGl7UwbCECFohueF0gbOKHTtY5tO9JebtOau_dQMXFk3HcZLZjLkUPzWOSIE7A4FSHmbS9Js6w0Q_3w7fxEc-1rO9-JrYN6jAwN0lzkx6im9N4iYqB5FbXqhp-vyMND0mpH5EshxENZAbZqUP_Rfdod-hqqGi0xE1pe6MNXyIbz1i7WCbJv0Cxv0jrLRWeDTGALh"/>
+<div class="flex justify-between items-center">
+<span class="text-3xl font-extrabold text-on-surface">$499.00</span>
+<button class="bg-surface-container-high p-3 rounded-full hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product: Xbox Series X -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col group cursor-pointer">
+<img alt="Xbox" class="w-full h-40 object-contain mb-4 transform group-hover:-translate-y-2 transition-transform" data-alt="Sleek black Xbox Series X console featuring its signature monolithic design and green internal vent glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHpW89sbJ3L5j0ySIiRLG3xyn-hu9jD_jEtR5_y0tLwi9di1JNSu86WIEHYEtmF-AE8pL8cAvrplaUlmFb_sopAdrWJteY8L0ta-0slDuIkSZWlSw0eP0RD9Bm4EIe7f9dTX8qMl-VpGdrQd0THHYBirLLEqc3Lhxnr8hy_hl2Q5hkQqMzYbpdnLOlFSnvWxP_lx4kwaGdsbAPYCivZ9yXHmNjrPtiB4q_XuhNcBbPSn5ky7C-ZvzwhjbmU6N_hKi6bqoUBqmGGzFJ"/>
+<h4 class="font-bold text-lg">Xbox Series X</h4>
+<span class="text-primary font-bold mt-1">$499.00</span>
+</div>
+<!-- Product: Nintendo Switch OLED -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col group cursor-pointer">
+<img alt="Switch" class="w-full h-40 object-contain mb-4 transform group-hover:-translate-y-2 transition-transform" data-alt="Nintendo Switch OLED model with white joycons displayed against a minimal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8G3R4THJI_xEf-viNypzkF7mt9OXcPg71-RFic2aR0yScnpgS0PQqSQA4Y0ypG9juyw1nc3I42Jmu8msuiT_EZ4i9KO5HIjnuJd47RVlKH-24VCpBucB8GL4JN-W8gwZalDdyVzVeLq8TebxVbi_4APNYBnhjF7sUaf4kWaZXB_JP_iX_7fOkP8Xh3JCaQOmcGapLdhhXnyks5bBc3cX4bwBI-4P7iXshMxp7oo8j3Q1KfYzQJIbch9WryLSMYIE8sXob3YbZeIyz"/>
+<h4 class="font-bold text-lg">Switch OLED</h4>
+<span class="text-primary font-bold mt-1">$349.00</span>
+</div>
+<!-- Product: DualSense Edge -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col group cursor-pointer">
+<img alt="DualSense" class="w-full h-40 object-contain mb-4 transform group-hover:-translate-y-2 transition-transform" data-alt="Close up of a DualSense Edge professional controller showing premium textures and customizable buttons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPVYBDracPQTVlfzNnhP1JrFDl-ldjsRaqAkoiZvRwKJnlY0iiQhHDTox0utT60kVVVrUvg-VvxhvIVhieJqldkV5YJHP03WUaJXKKKAfc3bVdzEk7Yn6uw_e3jQtXM6Zbw2s4smRbYPNE74SbaOjZBARVJLCIajJa9s4h58KA_Kiu4DseG4HUXSY6zx7n1O3JWqVBLpDukvKHoHTNW4rg8_QhIBJDSmtDG0t8W7OuE8Sy74QxmQUMETPuzYlCxsz6eycxjvY-RL6y"/>
+<h4 class="font-bold text-lg">DualSense Edge</h4>
+<span class="text-primary font-bold mt-1">$199.99</span>
+</div>
+<!-- Product: Mechanical Keyboard -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col group cursor-pointer">
+<img alt="Keyboard" class="w-full h-40 object-contain mb-4 transform group-hover:-translate-y-2 transition-transform" data-alt="Premium RGB mechanical gaming keyboard with glowing keys and high-end aluminum frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7oqWPXOmPp8b8Amctw2p1ujw9WMJDLGNITDOKvpB3iFSd4IfpoNp9oYrbdXTp0FYU6FWVBTp25uFNPuWZVYfsyDeymOqa6slq3VVw_SzuEjJh7iT1PB_hwZIhDUeBBPALYubyWZLDHM8R5sYmKcI_74pllajqIVXAUKilCFB6vBPTkYFa4csLYDs7z3M-Q0bY3mNj7w9D0RwGkuwZtrMIb8D7peU5xetCoH7Jt2irMJ7E9i7HgdOQCXJt8R2m8lRyfbugnkuV92lO"/>
+<h4 class="font-bold text-lg">RGB Mechanical</h4>
+<span class="text-primary font-bold mt-1">$159.00</span>
+</div>
+</div>
+<!-- Pro Accessories Section -->
+<div class="flex flex-col gap-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight">The Precision Lab</h2>
+<p class="text-outline mt-2">Tools for the competitive edge.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                        View all accessories
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Finger Sleeves (The Niche Pro Item) -->
+<div class="bg-surface-container-low rounded-xl p-6 group">
+<div class="h-48 flex items-center justify-center bg-white rounded-lg mb-4 overflow-hidden">
+<img alt="Mobile Gaming" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Close up of gaming finger sleeves on hands holding a mobile device with high speed gaming graphics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCms14EgI8NYYYuWZuK8uwd0LLRVZXUEBDSQ29aZhVIIYfMKkcr7bK71EReUxdvtVoFHpDomook9I7BsCZDvOsVNUOpE2dcBAbyCVfSvDnMN4KGRC7YnfM7IaYiEB7XGsQjLZtW3RJSevGayJUfgt-H7tBICZO1dn9bW_Nr5Gghu7ZSUhdUWtbkzwqNi3UKuTZ52L81N9Y49IQ_dk2-naGfsTZKYoDGgOZjq9dSVYX3_s0SDmPqRzwSpKyX-QTHABI74kJTxRt-1kOz"/>
+</div>
+<h4 class="font-bold">Pro Finger Sleeves</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary font-bold">$12.99</span>
+<span class="text-[10px] font-bold bg-error-container text-on-error-container px-2 py-0.5 rounded">LOW STOCK</span>
+</div>
+</div>
+<!-- Gaming Mouse -->
+<div class="bg-surface-container-low rounded-xl p-6 group">
+<div class="h-48 flex items-center justify-center bg-white rounded-lg mb-4 overflow-hidden">
+<img alt="Mouse" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Professional lightweight wireless gaming mouse with ergonomic design and subtle RGB accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMS8bhoZQwEsVBIpS6S5h3yBEBgPj9fR8nH2hrJBI9PQOPwu7tn340llcydJiIfh_olvuS01YOj_2QlOUOEI5_TQ9DwcAr--kN0a4NmOZOdvO9xBup_d7qX2nsB2FxYfsLCYsRro95pKvmFw-Qt_lK8uV_x8rlTIJskwDsVk8c72CPydEOapo0mYQwN4hpp796Y0UVHDrgTYqcX7_dpPdoD3-0kdxYP5hg64h8f_-_ET8gNAjmOnAu_IvRVl85y2CuuWbMuQKu8ba"/>
+</div>
+<h4 class="font-bold">Elite Series Mouse</h4>
+<span class="text-primary font-bold mt-2 block">$89.00</span>
+</div>
+<!-- Pro Headset -->
+<div class="bg-surface-container-low rounded-xl p-6 group">
+<div class="h-48 flex items-center justify-center bg-white rounded-lg mb-4 overflow-hidden">
+<img alt="Headset" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="High-fidelity wireless gaming headset with leather earcups and adjustable microphone in professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj21PlYIFJ68xeE-ld8StE5KokqJVbiGZT4R8bZ32wlflPlEQrH2gqOQ8ptSpZSk7McoOXlSHmE2fXfo8e9Ua5D0EjdQdLCq9CP6Uxvonu2WXvudqJLu-GepZ0-U4ah2uZWoabeozXNlisJ08Wn8nT2aEqpewvFgkFHx-2HctvqMJkwee6lfTRMAXJblXPPD6FUJ2rF5V0ypE9JciZq_hYv-PBEAntwf_6FkNuNe69_hG-59EFW88ikV0QX_y9u9g8wlCBFsFQHS8l"/>
+</div>
+<h4 class="font-bold">Spatial Audio Pro</h4>
+<span class="text-primary font-bold mt-2 block">$249.00</span>
+</div>
+<!-- Elite Series 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 group">
+<div class="h-48 flex items-center justify-center bg-white rounded-lg mb-4 overflow-hidden">
+<img alt="Elite Controller" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Xbox Elite Series 2 wireless controller with modular parts displayed on a tech workstation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVsRkZqf39sZXvCqL1BwEQO4ZShl-0j4nBGcjtpaarI-rxx3uPFaFCv0G0ZdVuEQHHgKyyzbqnmuvuVeesGKCD5LLevOZ15JxTs-xkYoy1tQLXcoSk_Kj7QK5HJl5uhgvfi88ouvRgAmjKhlQwLd4k2cvhvA1_UJYn2OVT3IwdAlLVQIA2EoCCKqTwf3GlXEoIE8UbJTXtv34_RghIGPkFbch9NyJizU5FT37DgZ9SkhGaopb1-cJOKeCp9jaqEfqAF8GDAo81vTuT"/>
+</div>
+<h4 class="font-bold">Elite Series 2</h4>
+<span class="text-primary font-bold mt-2 block">$179.99</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-zinc-800 bg-zinc-900 dark:bg-black mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-[1920px] mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="text-orange-500 font-bold text-2xl tracking-tighter">CURATOR</span>
+<p class="text-zinc-500 text-xs mt-2 font-['Inter'] uppercase tracking-widest">© 2024 CURATOR RETAIL. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-12 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Warranty</a>
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Support</a>
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Affiliates</a>
+</div>
+</div>
+</footer>
+<!-- FAB for Cart -->
+<div class="fixed bottom-8 right-8 z-40 md:hidden">
+<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-2xl shadow-primary/40 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aether Computing | Premium Hardware</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#fbb022",
+                        "on-primary": "#fff0ea",
+                        "tertiary": "#7c5300",
+                        "on-secondary-container": "#515155",
+                        "on-tertiary-fixed": "#352100",
+                        "error-dim": "#9f0519",
+                        "primary-fixed": "#ff7937",
+                        "on-secondary": "#f3f2f6",
+                        "on-error-container": "#570008",
+                        "background": "#f6f6f6",
+                        "surface-container-low": "#f0f1f1",
+                        "surface-container-highest": "#dbdddd",
+                        "on-secondary-fixed": "#3e3f42",
+                        "secondary-fixed": "#e3e2e6",
+                        "primary-dim": "#8b3400",
+                        "on-surface-variant": "#5a5c5c",
+                        "on-tertiary-fixed-variant": "#5c3d00",
+                        "surface-container-high": "#e1e3e3",
+                        "primary": "#9e3c00",
+                        "primary-fixed-dim": "#fa6303",
+                        "inverse-surface": "#0c0f0f",
+                        "tertiary-fixed-dim": "#eba20d",
+                        "secondary-dim": "#4f4f53",
+                        "on-tertiary": "#fff0e0",
+                        "on-primary-container": "#421400",
+                        "on-error": "#ffefee",
+                        "on-tertiary-container": "#513500",
+                        "outline-variant": "#acadad",
+                        "secondary-container": "#e3e2e6",
+                        "inverse-primary": "#fa6303",
+                        "surface-tint": "#9e3c00",
+                        "error-container": "#fb5151",
+                        "on-secondary-fixed-variant": "#5b5b5f",
+                        "surface-bright": "#f6f6f6",
+                        "on-primary-fixed-variant": "#511b00",
+                        "secondary": "#5b5b5f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#000000",
+                        "error": "#b31b25",
+                        "surface": "#f6f6f6",
+                        "secondary-fixed-dim": "#d5d4d8",
+                        "outline": "#767777",
+                        "surface-container": "#e7e8e8",
+                        "tertiary-dim": "#6c4800",
+                        "primary-container": "#ff7937",
+                        "on-background": "#2d2f2f",
+                        "surface-variant": "#dbdddd",
+                        "inverse-on-surface": "#9c9d9d",
+                        "surface-dim": "#d3d5d5",
+                        "on-surface": "#2d2f2f",
+                        "tertiary-container": "#fbb022"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0c0f0f 0%, #2d2f2f 100%);
+        }
+        .cta-gradient {
+            background: linear-gradient(to right, #9e3c00, #ff7937);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-6 py-3 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tight text-orange-800 dark:text-orange-600 font-headline">Aether Computing</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-medium">
+<a class="text-orange-700 font-bold border-b-2 border-orange-700" href="#">Hardware</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-600 transition-colors duration-200" href="#">Software</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-600 transition-colors duration-200" href="#">Custom Builds</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-orange-600 transition-colors duration-200" href="#">Support</a>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-highest border-none rounded-full px-4 py-2 text-sm w-64 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="Search components..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant">search</span>
+</div>
+<button class="text-zinc-600 active:scale-95 transition-transform"><span class="material-symbols-outlined" data-icon="person">person</span></button>
+<button class="text-zinc-600 active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+<div class="bg-zinc-100 dark:bg-zinc-800 h-px"></div>
+</header>
+<main class="pt-[64px] flex w-full max-w-screen-2xl mx-auto min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 h-screen sticky top-[64px] bg-zinc-50 dark:bg-zinc-950 flex flex-col py-6 pr-4 space-y-2 hidden lg:flex border-r border-zinc-100 dark:border-zinc-800">
+<div class="px-6 mb-4">
+<h2 class="text-xs uppercase tracking-widest text-zinc-500 font-bold">Categories</h2>
+<p class="text-[10px] text-zinc-400">Browse Hardware</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center space-x-3 px-6 py-3 bg-white dark:bg-zinc-900 text-orange-700 font-semibold rounded-r-full shadow-sm hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span>
+<span class="text-sm font-headline">Laptops</span>
+</a>
+<a class="flex items-center space-x-3 px-6 py-3 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="desktop_windows">desktop_windows</span>
+<span class="text-sm font-headline">Desktops</span>
+</a>
+<a class="flex items-center space-x-3 px-6 py-3 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="mouse">mouse</span>
+<span class="text-sm font-headline">Peripherals</span>
+</a>
+<a class="flex items-center space-x-3 px-6 py-3 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span class="text-sm font-headline">Components</span>
+</a>
+<a class="flex items-center space-x-3 px-6 py-3 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="router">router</span>
+<span class="text-sm font-headline">Networking</span>
+</a>
+</nav>
+<div class="mt-auto p-6">
+<div class="bg-primary-container/10 p-4 rounded-xl border border-primary/10">
+<p class="text-xs font-bold text-primary mb-1">Aether Pro Support</p>
+<p class="text-[10px] text-zinc-600 mb-2">24/7 technical assistance for enterprise clients.</p>
+<button class="text-[10px] uppercase font-bold text-primary underline">Get Help</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<section class="flex-1 p-6 md:p-8 space-y-12">
+<!-- Hero Section -->
+<div class="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl flex items-center hero-gradient group">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay">
+<img alt="Hardware" class="w-full h-full object-cover" data-alt="cinematic close-up of a futuristic backlit mechanical keyboard and a high-performance carbon fiber gaming laptop on a dark desk with cyan and orange lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHEfvwp8pJHMs8z4HNqtucf7jgFxDMamQpqpJCVQcdrLt6gjXCjC7SF67p6b5HYXfqLexMOvBi7ooe-btVJMarmnWw1Rxg_cq9QxuLfMmPa0tompw2-wYGBDBiI5LCUtMNLl0P1eGyYRQK118tkMZYZJ4VUagqpS0wQEH59VlVI261EVMuM9RwOuA0FI-YRbkvi3-4Cj9d6-M7aDfpKo7lTZm_AqBOi1DzvxE_JEaCob-CFHjBZeuSChE8_20uuwJUM7vrnOMlxabI"/>
+</div>
+<div class="relative z-10 px-12 max-w-2xl space-y-6">
+<span class="inline-block px-3 py-1 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full">New Arrival</span>
+<h1 class="text-6xl font-extrabold text-white font-headline leading-tight">High-Performance Hardware: <span class="text-primary-fixed">The Next Generation</span></h1>
+<p class="text-zinc-300 text-lg font-medium leading-relaxed max-w-lg">Engineered for creators and competitors. Experience the absolute limit of modern computing throughput.</p>
+<div class="flex space-x-4 pt-4">
+<button class="cta-gradient text-on-primary px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-transform active:scale-95 flex items-center space-x-2">
+<span>Shop The Series</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                            Learn More
+                        </button>
+</div>
+</div>
+</div>
+<!-- Category Filter Row -->
+<div class="flex items-center space-x-4 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-2 bg-primary-container text-on-primary-container rounded-lg text-sm font-bold whitespace-nowrap">All Products</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface text-sm font-medium rounded-lg hover:bg-surface-container-highest transition-colors whitespace-nowrap">Laptops</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface text-sm font-medium rounded-lg hover:bg-surface-container-highest transition-colors whitespace-nowrap">PC Components</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface text-sm font-medium rounded-lg hover:bg-surface-container-highest transition-colors whitespace-nowrap">Keyboards &amp; Mice</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface text-sm font-medium rounded-lg hover:bg-surface-container-highest transition-colors whitespace-nowrap">Power Solutions</button>
+</div>
+<!-- Product Grid -->
+<div class="bento-grid">
+<!-- Large Featured Product: Workstation PC -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-zinc-100 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 space-y-4">
+<div class="flex items-center space-x-2">
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded text-[10px] font-bold">Limited Edition</span>
+<span class="text-zinc-400 text-xs font-medium">#Build-049</span>
+</div>
+<h3 class="text-3xl font-bold font-headline">Aether Zenith Pro Workstation</h3>
+<p class="text-zinc-500 text-sm leading-relaxed">Liquid-cooled monster featuring the latest RTX series GPU and a custom open-frame aluminum chassis.</p>
+<div class="flex items-baseline space-x-2">
+<span class="text-2xl font-black text-on-background">$4,999.00</span>
+<span class="text-zinc-400 line-through text-sm">$5,400.00</span>
+</div>
+<button class="cta-gradient text-on-primary px-6 py-3 rounded-full font-bold text-sm w-fit mt-4">Configure Build</button>
+</div>
+<div class="w-full md:w-1/2 aspect-square rounded-xl overflow-hidden bg-zinc-50">
+<img alt="PC Build" class="w-full h-full object-cover" data-alt="close-up view of a custom liquid-cooled PC build with neon orange tubes and minimalist white chassis lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQDBnLmV4aXVE_S5jUWI3VIPX6hos3m9JfoxYdgY2Sw7fWTYMhcgjXvMbeGezRt93bKGg5YIK7LLFK2xa3rrWkCs1ajROAV1FgAy7SnHDziH04IRPoaLGY9RFCTTGiXGhSQs8sFlIFKzhxP4rxVc50htFIfvjgrVT8SyZ-3iIcMVXlDDiVnavqlzHn8a1KZrUmnc16v2SAL9aGo8-2aVjsNQIx1YV2UGns5-NIZFtgmQ6VreQ1nz1Oba9nPR_sRkwAoQF_fIasC-y"/>
+</div>
+</div>
+<!-- Product Card: Gaming Laptop -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col">
+<div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-zinc-100 mb-4">
+<img alt="Laptop" class="w-full h-full object-cover" data-alt="high-end minimalist silver laptop with glowing keyboard against a clean studio background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqLCEa_nBJrN4byz5FbywXlMyGg4kYlwc08TnihNsJS2zp0akK8IvboxTwPklEjh147WevQc7j81bPIKgqCjQSeU4Rm-Xws3Pyzz-uLJ8DXUK3mM2Xn9e7NGm_Cl5xmdmhTx0AmJcuY0cFcE0MRYN6WMSRP4O0t3nIY0tmPhHyb99cl-ZCxAvvG_yK5MxvU65r0ykXO4snkX5ldF1LVc29RWd7vvNkOVUeb-NGuSK8v8p4M_9lbUFbNEEQOUIAmkMvWmlvQsh8cUsj"/>
+<span class="absolute top-2 right-2 bg-error-container text-on-error-container px-2 py-1 rounded text-[10px] font-bold">In Stock</span>
+</div>
+<h4 class="text-lg font-bold font-headline mb-1">Aether Phantom 16"</h4>
+<p class="text-zinc-500 text-xs mb-4">RTX 4080 | 32GB DDR5 | 2TB SSD</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-xl font-bold">$2,199.00</span>
+<button class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card: Mechanical Keyboard -->
+<div class="col-span-12 md:col-span-4 lg:col-span-3 bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col">
+<div class="aspect-square rounded-xl overflow-hidden bg-zinc-100 mb-4">
+<img alt="Keyboard" class="w-full h-full object-cover" data-alt="sleek mechanical keyboard with orange custom keycaps and matte black frame on a minimalist desk setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH3OFkWqTB-QG_ZfqyJRAiEbuMLpQELTF5qkYybKE77HSWRzC-4ajjaSQ8UYiKqLl5V9RO8XP32FedaIyPJRbRqK2Mbu3ZXHHtFDisu4Grca5zT8hAj521ErlThs9Wg7B4_V86dTkejg8LlpUGi1qj4qV2RNxiirEDVsULASFlG7OSp1OFkgF0xSck0B6n-2OMfrnhAe0axH9juideL9myrnJOy6IipYP1a4Y8OBW9jjZ_fSZ7_win0BvTDj2F80VCMpVoIikTSC2w"/>
+</div>
+<h4 class="text-base font-bold font-headline">Nova 65% Mechanical</h4>
+<p class="text-zinc-500 text-[11px] mb-4">Gateron Brown | Hot-swappable</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-lg font-bold">$149.00</span>
+<button class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card: Precision Mouse -->
+<div class="col-span-12 md:col-span-4 lg:col-span-3 bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col">
+<div class="aspect-square rounded-xl overflow-hidden bg-zinc-100 mb-4">
+<img alt="Mouse" class="w-full h-full object-cover" data-alt="professional ergonomic gaming mouse with precise texture and orange accent led lights on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClmM8dLViNLvjofRolJ9m0ykhuVX8bB1eZCSM9Yy7NDuYr-MCK5SmspPrc8p8DkMOMPlJmHnVpP8m2QUv_T1iHw8-LwCK1DAC2HxfAKGxTtHx9AtWZopXT1m1OKNLk4nJyvw-i_sbgpBkk74J9ba_bgcEiqgrMCoxM_U06-o6UM-GewuQWAuSj6r95nSsXJXEXizTmAc6_hFh6kH4_UAsnKMrFvjY_qD9i8XNUgtHQVq_4w0b4CE9M_pLTWnTFa0P6InZsng0_C2Mp"/>
+</div>
+<h4 class="text-base font-bold font-headline">Apex Wireless Mouse</h4>
+<p class="text-zinc-500 text-[11px] mb-4">26k DPI | 72h Battery Life</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-lg font-bold">$89.00</span>
+<button class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card: Power Adapter -->
+<div class="col-span-12 md:col-span-4 lg:col-span-3 bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col">
+<div class="aspect-square rounded-xl overflow-hidden bg-zinc-100 mb-4 flex items-center justify-center">
+<img alt="Charger" class="w-full h-full object-cover" data-alt="sleek matte black 140W gallium nitride usb-c laptop charger with premium braided cable" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ClUJNLOeojdm1IDclNzc6TVxH_t09uCx8aePc4q_wAGA6FqIal4tgJzUcJRVhI9WIgqAlfGgmIpv9W5CzF-yp9DcuMmi_PP957WkLonVZFgRrzP4XYOAUaPdISfBz5EAaD-hY19gixgDj2afiTFmmXmqQGlnKRIYAARDKQRJKx3mCtcHRaItn8-n1DUUGlb3slLiiPMhDtTyLKw5lhs0KgA8Aj7vumumRRmjjlE9PSWv2tKmuv_DPhiJiLF-ow3LVtg3SLn_t4Er"/>
+</div>
+<h4 class="text-base font-bold font-headline">Aether GaN 140W</h4>
+<p class="text-zinc-500 text-[11px] mb-4">Triple Port | Universal Charging</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-lg font-bold">$75.00</span>
+<button class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card: Ultrabook -->
+<div class="col-span-12 md:col-span-4 lg:col-span-3 bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col">
+<div class="aspect-square rounded-xl overflow-hidden bg-zinc-100 mb-4">
+<img alt="Ultrabook" class="w-full h-full object-cover" data-alt="ultra thin modern laptop with thin bezels open on a bright minimalist workspace with plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhzM1PP-xN1w8RoahvVGLfcn4dS49m84GKP_EzK-CJv3GGSJ_3Jrd6JvgU_1dEgT6zq1GNGdUBsRlhDnXDY6c8jwrWJEcmJvsdumYT2jdEEIGSsbrWGTP7K3LE6VM4MjPX-BUHIKZAL3dtNBr2dK11H4BUm0yzyDL0uPfnzfSzwZQAoOIWyI1L57jwgvurfZskAtjY8UnxSAeDwNxvjbK_qInIB6JXTif0a26lOu4JMZq8lI3I6qiwtGLjszsx2rTkr1WIHGksdgVK"/>
+</div>
+<h4 class="text-base font-bold font-headline">Air Stream Ultrabook</h4>
+<p class="text-zinc-500 text-[11px] mb-4">i7 Processor | 1.1kg Light</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-lg font-bold">$1,299.00</span>
+<button class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Promotion Banner -->
+<div class="bg-primary p-12 rounded-3xl text-on-primary flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="relative z-10 space-y-4 max-w-xl text-center md:text-left">
+<h2 class="text-4xl font-extrabold font-headline leading-tight">Elevate Your Performance</h2>
+<p class="text-primary-container/80 font-medium">Join the Aether Curator Program and get 15% off your first custom workstation assembly. Professional hardware, curated for excellence.</p>
+</div>
+<div class="relative z-10">
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold shadow-xl hover:bg-zinc-100 transition-colors">Join Now</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto py-12 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-12 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-lg font-black text-zinc-900 dark:text-white">Aether Computing</div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold leading-relaxed">The pinnacle of computational aesthetics and performance. Part of The Digital Curator Network.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="text-xs font-bold text-orange-700 uppercase tracking-widest">Resources</h4>
+<nav class="flex flex-col space-y-2">
+<a class="text-zinc-500 dark:text-zinc-400 text-xs uppercase tracking-widest hover:text-zinc-900 dark:hover:text-white transition-colors" href="#">Warranty Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 text-xs uppercase tracking-widest hover:text-zinc-900 dark:hover:text-white transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-zinc-500 dark:text-zinc-400 text-xs uppercase tracking-widest hover:text-zinc-900 dark:hover:text-white transition-colors" href="#">Service Centers</a>
+</nav>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="text-xs font-bold text-orange-700 uppercase tracking-widest">Legal</h4>
+<nav class="flex flex-col space-y-2">
+<a class="text-zinc-500 dark:text-zinc-400 text-xs uppercase tracking-widest hover:text-zinc-900 dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 text-xs uppercase tracking-widest hover:text-zinc-900 dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+</nav>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="text-xs font-bold text-orange-700 uppercase tracking-widest">Newsletter</h4>
+<div class="flex">
+<input class="bg-white dark:bg-zinc-800 border-none rounded-l-lg text-xs w-full px-4 py-2 focus:ring-1 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg"><span class="material-symbols-outlined text-sm">send</span></button>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center text-[10px] uppercase tracking-[0.2em] text-zinc-400">
+            © 2024 Aether Computing. All rights reserved.
+        </div>
+</footer>
+<!-- FAB: Floating Shopping Basket (Contextual) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</button>
+</div>
+</body></html>
